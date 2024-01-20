@@ -7,7 +7,14 @@
       "type": "palladium:intangibility",
       "icon": "power_plus:textures/gui/teal/astral.png",
       "title": "Astral Form",
-      "vertical": true
+      "vertical": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle"
+          }
+        ]
+      }
     },
     "astral2": {
       "type": "palladium:invisibility",
@@ -20,6 +27,34 @@
           {
             "type": "palladium:ability_enabled",
             "ability": "astral1"
+          }
+        ]
+      }
+    },
+    "astral3": {
+      "type": "palladium:intangibility",
+      "icon": "power_plus:textures/gui/teal/astral.png",
+      "title": "Astral Form (Vertical)",
+      "vertical": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held"
+          }
+        ]
+      }
+    },
+    "astral4": {
+      "type": "palladium:invisibility",
+      "icon": "power_plus:textures/gui/teal/astral.png",
+      "title": "Astral Form",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "astral3"
           }
         ]
       }
