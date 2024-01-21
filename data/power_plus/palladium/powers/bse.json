@@ -6,7 +6,7 @@
     "astral1": {
       "type": "palladium:attribute_modifier",
       "icon": "power_plus:textures/gui/tachyon/bse_logo.png",
-      "title": "Speed Up",
+      "title": "Speed Boost",
       "operation": 1,
       "amount": 0.5,
       "conditions": {
