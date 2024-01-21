@@ -1,0 +1,77 @@
+{
+  "name": "Tachyon Force",
+  "background": "minecraft:textures/block/red_wool.png",
+  "icon": "power_plus:textures/gui/tachyon/logo.png",
+  "abilities": {
+    "speed": {
+      "type": "palladium:attribute_modifier",
+      "icon": "power_plus:textures/gui/tachyon/logo.png",
+      "title": "Speed Up",
+      "amount": 2,
+      "attribute": "minecraft:generic.movement_speed",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle"
+          }
+        ]
+      }
+    },
+    "strength": {
+      "type": "palladium:attribute_modifier",
+      "title": "Kinectic Strength",
+      "attribute":"palladium:punch_damage",
+      "amount": 8.5,
+      "hide_in_bar": true,
+      "icon": "power_plus:textures/gui/tachyon/logo.png",
+      "conditions": {
+        "unlocking": [
+          {
+          "type": "palladium:experience_level_buyable",
+          "xp_level": 1
+          }
+        ]
+      }
+    },
+    "phase": {
+      "type": "palladium:intangibility",
+      "bar_color": "red",
+      "icon": "power_plus:textures/gui/tachyon/logo.png",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held"
+          }
+        ]
+      }
+    },
+    "healing": {
+      "type": "palladium:healing",
+      "icon": "minecraft:air",
+      "frequency": 8,
+      "amount": 2,
+      "title": "Speed Healing",
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:true"
+          }
+        ]
+      }
+    },
+    "water": {
+      "type": "palladium:water_walk",
+      "title": "Water Running",
+      "bar_color": "red",
+      "conditions": {
+          "unlocking": [
+        ],
+        "enabling": [
+          {
+                "type": "palladium:toggle"
+          }
+        ]
+      }
+    }
+  }
+}
