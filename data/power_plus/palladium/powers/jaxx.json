@@ -1,0 +1,127 @@
+{
+  "name": "Jaxx the Teal Wolf",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "power_plus:textures/gui/teal/icon.png",
+  "abilities": {
+    "fly": {
+      "type": "palladium:attribute_modifier",
+      "icon": "power_plus:textures/gui/teal/fly.png",
+      "title": "Flight",
+      "amount": 1,
+      "attribute": "palladium:flight_speed",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:experience_level_buyable",
+            "xp_level": 18
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "magic"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:true"
+          }
+        ]
+      }
+    },
+    "magic": {
+      "type": "palladium:dummy",
+      "title": "Magic",
+      "hide_in_bar": true,
+      "icon": "power_plus:textures/gui/teal/magic.png",
+      "conditions": {
+        "unlocking": [
+          {
+          "type": "palladium:experience_level_buyable",
+          "xp_level": 35
+          }
+        ]
+      }
+    },
+    "time": {
+      "type": "palladium:command",
+      "bar_color": "light_blue",
+      "icon": "power_plus:textures/gui/shadow/reset_time.png",
+      "commands": [
+        "time add 25"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held"
+          }
+        ]
+      }
+    },
+    "shield": {
+      "type": "palladium:damage_immunity",
+      "icon": "minecraft:air",
+      "title": "Invulnerable",
+      "damage_sources": [
+        "minecraft:damages_helmet",
+        "minecraft:bypasses_armor",
+        "minecraft:bypasses_shield",
+        "minecraft:bypasses_invulnerability",
+        "minecraft:bypasses_cooldown",
+        "minecraft:bypasses_effects",
+        "minecraft:bypasses_resistance",
+        "minecraft:bypasses_enchantments",
+        "minecraft:is_fire",
+        "minecraft:is_projectile",
+        "minecraft:witch_resistant_to",
+        "minecraft:is_explosion",
+        "minecraft:is_fall",
+        "minecraft:is_drowning",
+        "minecraft:is_freezing",
+        "minecraft:is_lightning",
+        "minecraft:no_anger",
+        "minecraft:no_impact",
+        "minecraft:always_most_significant_fall",
+        "minecraft:wither_immune_to",
+        "minecraft:ignites_armor_stands",
+        "minecraft:burns_armor_stands",
+        "minecraft:avoids_guardian_thorns",
+        "minecraft:always_triggers_silverfish",
+        "minecraft:always_hurts_ender_dragons"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type":"palladium:true"
+          }
+        ]
+      }
+    },
+    "size": {
+      "type": "palladium:size",
+      "title": "Size Changing",
+      "bar_color": "light_blue",
+      "scale": 1.25,
+      "conditions": {
+          "unlocking": [
+            {
+              "type": "palladium:experience_level_buyable",
+              "xp_level": 5
+            },
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "magic"
+            }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:toggle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
