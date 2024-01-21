@@ -122,6 +122,14 @@
           }
         ]
       }
+    },
+    "name": {
+      "type": "palladium:name_change",
+      "name": {
+        "text": "Jaxx the Teal Wolf",
+        "bold": true,
+        "color": "aqua"
+      }
     }
   }
 }
