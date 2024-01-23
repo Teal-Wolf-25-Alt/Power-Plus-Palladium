@@ -7,6 +7,9 @@
       "type": "palladium:attribute_modifier",
       "icon": "power_plus:textures/gui/tachyon/logo.png",
       "title": "Speed Up",
+      "list_index": 0,
+
+      "bar_color": "red",
       "amount": 2,
       "attribute": "minecraft:generic.movement_speed",
       "conditions": {
@@ -35,9 +38,17 @@
     },
     "phase": {
       "type": "palladium:intangibility",
+      "title": "Phasing",
+      "list_index": 1,
       "bar_color": "red",
-      "icon": "power_plus:textures/gui/tachyon/logo.png",
+      "icon": "power_plus:textures/gui/tachyon/phasing.png",
       "conditions": {
+        "unlocking": [
+          {
+            "type":"palladium:experience_level_buyable",
+            "xp_level": 60
+          }
+        ],
         "enabling": [
           {
             "type": "palladium:held"
@@ -47,7 +58,7 @@
     },
     "healing": {
       "type": "palladium:healing",
-      "icon": "minecraft:air",
+      "icon": "power_plus:textures/gui/tachyon/heart.png",
       "frequency": 8,
       "amount": 2,
       "title": "Speed Healing",
@@ -61,11 +72,17 @@
     },
     "water": {
       "type": "palladium:water_walk",
+      "icon": "power_plus:textures/gui/tachyon/water.png",
       "title": "Water Running",
+      "list_index": 2,
       "bar_color": "red",
       "conditions": {
           "unlocking": [
-        ],
+            {
+              "type": "palladium:experience_level_buyable",
+              "xp_level": 48
+              }
+          ],
         "enabling": [
           {
                 "type": "palladium:toggle"
