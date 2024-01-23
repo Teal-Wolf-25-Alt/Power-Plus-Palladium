@@ -9,6 +9,7 @@
       "title": "Flight",
       "amount": 1,
       "attribute": "palladium:flight_speed",
+      "gui_position": [1,3],
       "conditions": {
         "unlocking": [
           {
@@ -18,6 +19,64 @@
           {
             "type": "palladium:ability_unlocked",
             "ability": "magic"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_unlocked",
+                "ability": "fly2"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "fly2": {
+      "type": "palladium:attribute_modifier",
+      "icon": "power_plus:textures/gui/teal/fly.png",
+      "title": "Faster Flight",
+      "description": "Combine your speed and flight to learn to fly faster.",
+      "amount": 2.5,
+      "attribute": "palladium:flight_speed",
+      "gui_position": [1,7],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:experience_level_buyable",
+            "xp_level": 25
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "fly"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "run"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:true"
+          }
+        ]
+      }
+    },
+    "run": {
+      "type": "palladium:attribute_modifier",
+      "icon": "palladium:vibranium_weave_boots",
+      "title": "Speed",
+      "amount": 1.5,
+      "operation": 1,
+      "attribute": "minecraft:generic.movement_speed",
+      "gui_position": [0,0.5],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:experience_level_buyable",
+            "xp_level": 5
           }
         ],
         "enabling": [
@@ -32,6 +91,7 @@
       "title": "Magic",
       "hide_in_bar": true,
       "icon": "power_plus:textures/gui/teal/magic.png",
+      "gui_position": [0,2],
       "conditions": {
         "unlocking": [
           {
@@ -45,6 +105,8 @@
       "type": "palladium:command",
       "bar_color": "light_blue",
       "icon": "power_plus:textures/gui/shadow/reset_time.png",
+      "title": "Accelerate Time",
+      "gui_position": [0,0],
       "commands": [
         "time add 25"
       ],
@@ -58,8 +120,9 @@
     },
     "shield": {
       "type": "palladium:damage_immunity",
-      "icon": "minecraft:air",
+      "icon": "minecraft:bedrock",
       "title": "Invulnerable",
+      "gui_position": [0,1],
       "damage_sources": [
         "minecraft:damages_helmet",
         "minecraft:bypasses_armor",
@@ -97,9 +160,11 @@
     },
     "size": {
       "type": "palladium:size",
-      "title": "Size Changing",
+      "title": "Size Changing (125%)",
       "bar_color": "light_blue",
       "scale": 1.25,
+      "gui_position": [-1,3],
+      "list_index": 0,
       "conditions": {
           "unlocking": [
             {
@@ -113,10 +178,210 @@
         ],
         "enabling": [
           {
+            "type": "palladium:toggle"
+          },
+          {
             "type": "palladium:not",
             "conditions": [
               {
-                "type": "palladium:toggle"
+                "type": "palladium:ability_enabled",
+                "ability": "size2"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size3"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size4"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size5"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "size2": {
+      "type": "palladium:size",
+      "title": "Size Changing (200%)",
+      "bar_color": "light_blue",
+      "scale": 2,
+      "gui_position": [-1,4],
+      "list_index": 1,
+      "conditions": {
+          "unlocking": [
+            {
+              "type": "palladium:experience_level_buyable",
+              "xp_level": 10
+            },
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "size"
+            }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:toggle"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size3"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size4"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size5"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "size3": {
+      "type": "palladium:size",
+      "title": "Size Changing (400%)",
+      "bar_color": "light_blue",
+      "scale": 4,
+      "gui_position": [-1,5],
+      "list_index": 2,
+      "conditions": {
+          "unlocking": [
+            {
+              "type": "palladium:experience_level_buyable",
+              "xp_level": 40
+            },
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "size2"
+            }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:toggle"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size2"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size4"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size5"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "size4": {
+      "type": "palladium:size",
+      "title": "Size Changing (800%)",
+      "bar_color": "light_blue",
+      "scale": 8,
+      "gui_position": [-1,6],
+      "list_index": 3,
+      "conditions": {
+          "unlocking": [
+            {
+              "type": "palladium:experience_level_buyable",
+              "xp_level": 80
+            },
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "size3"
+            }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:toggle"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size2"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size3"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size5"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "size5": {
+      "type": "palladium:size",
+      "title": "Size Changing (25%)",
+      "bar_color": "light_blue",
+      "scale": 0.25,
+      "gui_position": [-1,7],
+      "list_index": 4,
+      "conditions": {
+          "unlocking": [
+            {
+              "type": "palladium:experience_level_buyable",
+              "xp_level": 100
+            },
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "size4"
+            }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:held"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size2"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size3"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size4"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "size"
               }
             ]
           }
@@ -129,6 +394,45 @@
         "text": "Jaxx the Teal Wolf",
         "bold": true,
         "color": "aqua"
+      }
+    },
+    "absolute": {
+      "type": "palladium:command",
+      "title": "Absolute Magic",
+      "hide_in_bar": true,
+      "icon": "power_plus:staff",
+      "gui_position": [0,8],
+      "commands": ["superpower add power_plus:jaxx_staff Teal_Wolf_25"],
+      "conditions": {
+        "unlocking": [
+          {
+          "type": "palladium:experience_level_buyable",
+          "xp_level": 125
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "magic"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "fly2"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "size5"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions":[
+              {
+                "type": "palladium:has_power",
+                "power": "power_plus:jaxx_staff"
+              }
+            ]
+          }
+        ]
       }
     }
   }
