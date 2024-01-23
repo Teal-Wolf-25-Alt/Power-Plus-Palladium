@@ -72,7 +72,7 @@
     },
     "water": {
       "type": "palladium:water_walk",
-      "icon": "power_plus:textures/gui/tachyon/water.png",
+      "icon": "power_plus:textures/gui/tachyon/waterr.png",
       "title": "Water Running",
       "list_index": 2,
       "bar_color": "red",
@@ -89,6 +89,9 @@
           }
         ]
       }
+    },
+    "vibrate": {
+      "type": "palladium:vibrate"
     }
   }
 }

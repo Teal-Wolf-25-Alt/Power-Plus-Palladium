@@ -20,17 +20,6 @@
             "type": "palladium:ability_unlocked",
             "ability": "magic"
           }
-        ],
-        "enabling": [
-          {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:ability_unlocked",
-                "ability": "fly2"
-              }
-            ]
-          }
         ]
       }
     },
