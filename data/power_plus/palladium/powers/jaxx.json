@@ -20,6 +20,17 @@
             "type": "palladium:ability_unlocked",
             "ability": "magic"
           }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_unlocked",
+                "ability": "fly2"
+              }
+            ]
+          }
         ]
       }
     },
@@ -137,7 +148,8 @@
         "minecraft:burns_armor_stands",
         "minecraft:avoids_guardian_thorns",
         "minecraft:always_triggers_silverfish",
-        "minecraft:always_hurts_ender_dragons"
+        "minecraft:always_hurts_ender_dragons",
+        "power_plus:entity"
       ],
       "conditions": {
         "enabling": [
