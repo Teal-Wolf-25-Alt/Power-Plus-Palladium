@@ -8,7 +8,6 @@
       "icon": "power_plus:textures/gui/tachyon/logo.png",
       "title": "Speed Up",
       "list_index": 0,
-
       "bar_color": "red",
       "amount": 2,
       "attribute": "minecraft:generic.movement_speed",
@@ -16,6 +15,32 @@
         "enabling": [
           {
             "type": "palladium:toggle"
+          }
+        ]
+      }
+    },
+    "speedy": {
+      "type": "palladium:attribute_modifier",
+      "icon": "power_plus:textures/gui/tachyon/logo.png",
+      "title": "Super Sonic Speed",
+      "list_index": 1,
+      "bar_color": "red",
+      "amount": 6,
+      "attribute": "minecraft:generic.movement_speed",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:experience_level_buyable",
+            "xp_level": 30
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "speed"
+          },
+          {
+            "type": "palladium:held"
           }
         ]
       }
@@ -31,7 +56,7 @@
         "unlocking": [
           {
           "type": "palladium:experience_level_buyable",
-          "xp_level": 1
+          "xp_level": 3
           }
         ]
       }
@@ -39,7 +64,7 @@
     "phase": {
       "type": "palladium:intangibility",
       "title": "Phasing",
-      "list_index": 1,
+      "list_index": 2,
       "bar_color": "red",
       "icon": "power_plus:textures/gui/tachyon/phasing.png",
       "conditions": {
@@ -74,18 +99,22 @@
       "type": "palladium:water_walk",
       "icon": "power_plus:textures/gui/tachyon/waterr.png",
       "title": "Water Running",
-      "list_index": 2,
+      "list_index": 3,
       "bar_color": "red",
       "conditions": {
           "unlocking": [
             {
               "type": "palladium:experience_level_buyable",
-              "xp_level": 48
+              "xp_level": 15
               }
           ],
         "enabling": [
           {
                 "type": "palladium:toggle"
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "speed"
           }
         ]
       }
