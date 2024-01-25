@@ -6,10 +6,10 @@
     "speed": {
       "type": "palladium:attribute_modifier",
       "icon": "power_plus:textures/gui/tachyon/logo.png",
-      "title": "Speed Up",
+      "title": "Super Speed",
       "list_index": 0,
       "bar_color": "red",
-      "amount": 2,
+      "amount": 4,
       "attribute": "minecraft:generic.movement_speed",
       "conditions": {
         "enabling": [
@@ -27,33 +27,7 @@
           }
         ]
       }
-    },
-    "speedy": {
-      "type": "palladium:attribute_modifier",
-      "icon": "power_plus:textures/gui/tachyon/logo.png",
-      "title": "Super Sonic Speed",
-      "list_index": 1,
-      "bar_color": "red",
-      "amount": 6,
-      "attribute": "minecraft:generic.movement_speed",
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:experience_level_buyable",
-            "xp_level": 30
-          }
-        ],
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "speed"
-          },
-          {
-            "type": "palladium:held"
-          }
-        ]
-      }
-    },
+    },    
     "strength": {
       "type": "palladium:attribute_modifier",
       "title": "Kinectic Strength",
