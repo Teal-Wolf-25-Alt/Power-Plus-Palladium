@@ -15,6 +15,15 @@
         "enabling": [
           {
             "type": "palladium:toggle"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "speedy"
+              }
+            ]
           }
         ]
       }
