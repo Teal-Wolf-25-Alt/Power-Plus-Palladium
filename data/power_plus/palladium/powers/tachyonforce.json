@@ -33,7 +33,7 @@
       "title": "Kinectic Strength",
       "attribute":"palladium:punch_damage",
       "amount": 8.5,
-      "hide_in_bar": true,
+      "hidden_in_bar": true,
       "icon": "power_plus:textures/gui/tachyon/logo.png",
       "conditions": {
         "unlocking": [
@@ -104,6 +104,22 @@
     },
     "vibrate": {
       "type": "palladium:vibrate"
+    },
+    "trail": {
+      "type": "palladium:command",
+      "hidden_in_bar": true,
+      "hidden": true,
+      "commands": [
+        "particle electric_spark ^ ^-1 ^-.25 ^ ^1 ^ 6 20 force"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "speed"
+          }
+        ]
+      }
     }
   }
 }
