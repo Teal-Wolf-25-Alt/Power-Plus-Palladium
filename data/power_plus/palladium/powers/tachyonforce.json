@@ -104,22 +104,6 @@
     },
     "vibrate": {
       "type": "palladium:vibrate"
-    },
-    "trail": {
-      "type": "palladium:command",
-      "hidden_in_bar": true,
-      "hidden": true,
-      "commands": [
-        "particle electric_spark ^ ^-1 ^-.25 ^ ^1 ^ 6 20 force"
-      ],
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "speed"
-          }
-        ]
-      }
     }
   }
 }
