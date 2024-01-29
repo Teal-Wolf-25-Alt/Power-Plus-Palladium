@@ -9,7 +9,7 @@
       "title": "Super Speed",
       "list_index": 0,
       "bar_color": "red",
-      "amount": 4,
+      "amount": 3.2,
       "attribute": "minecraft:generic.movement_speed",
       "conditions": {
         "enabling": [
