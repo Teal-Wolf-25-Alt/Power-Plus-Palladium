@@ -2,8 +2,8 @@
   "pack": {
     "id": "power_plus",
     "description": "Power Plus Plus",
-    "pack_format": 8,
-    "version": "0.2"
+    "pack_format": 15,
+    "version": "1.2"
   },
   "dependencies": {
     "common": {
@@ -13,7 +13,8 @@
       "curios": "*"
     },
     "fabric": {
-      "trinkets": ">=3.7.1"
+      "trinkets": ">=3.7.1",
+      "weave": ">=1.0"
     }
   }
 }

@@ -33,7 +33,7 @@
       "title": "Kinectic Strength",
       "attribute":"palladium:punch_damage",
       "amount": 8.5,
-      "hide_in_bar": true,
+      "hidden_in_bar": true,
       "icon": "power_plus:textures/gui/tachyon/logo.png",
       "conditions": {
         "unlocking": [
