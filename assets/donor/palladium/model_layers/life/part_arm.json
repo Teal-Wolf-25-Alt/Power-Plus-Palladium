@@ -1,0 +1,55 @@
+{
+    "texture_width": 128,
+    "texture_height": 128,
+    "mesh": {
+        "bone": {
+            "part_pose": {
+                "offset": [
+                    0,
+                    -11.5,
+                    -6
+                ],
+                "rotation": [
+                    0,
+                    90,
+                    -180
+                ]
+            },
+            "cubes": [
+                {
+                    "origin": [
+                        -2,
+                        6.5,
+                        -2
+                    ],
+                    "dimensions": [
+                        4,
+                        3,
+                        4
+                    ],
+                    "texture_offset": [
+                        112,
+                        121
+                    ]
+                },
+                {
+                    "origin": [
+                        -2,
+                        -2.5,
+                        -2
+                    ],
+                    "dimensions": [
+                        4,
+                        9,
+                        4
+                    ],
+                    "texture_offset": [
+                        104,
+                        16
+                    ]
+                }
+            ],
+            "children": {}
+        }
+    }
+}

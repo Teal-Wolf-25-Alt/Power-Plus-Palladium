@@ -1,0 +1,467 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "armorBody",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "Muscle_layer6",
+					"parent": "armorBody",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 12, -2], "size": [8, 12, 4], "uv": [80, 16]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "armorBody",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 12, -2], "size": [8, 12, 4], "inflate": -0.02, "uv": [16, 16]}
+					]
+				},
+				{
+					"name": "armorRightArm",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "Arm_1",
+					"parent": "armorRightArm",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "Skin_Layer3",
+					"parent": "Arm_1",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Muscle_layer8",
+					"parent": "Arm_1",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 15, -2],
+							"size": [4, 9, 4],
+							"uv": {
+								"north": {"uv": [108, 20], "uv_size": [4, 9]},
+								"east": {"uv": [104, 20], "uv_size": [4, 9]},
+								"south": {"uv": [116, 20], "uv_size": [4, 9]},
+								"west": {"uv": [112, 20], "uv_size": [4, 9]},
+								"up": {"uv": [108, 16], "uv_size": [4, 4]},
+								"down": {"uv": [112, 16], "uv_size": [4, -4]}
+							}
+						}
+					]
+				},
+				{
+					"name": "right_arm",
+					"parent": "Arm_1",
+					"pivot": [-5, 23.175, 0],
+					"rotation": [0, 0, 5],
+					"cubes": [
+						{
+							"origin": [-6.25, 15.175, -1],
+							"size": [2, 8.65, 2],
+							"inflate": -0.02,
+							"uv": {
+								"north": {"uv": [42, 18], "uv_size": [2, 9]},
+								"east": {"uv": [40, 18], "uv_size": [2, 9]},
+								"south": {"uv": [46, 18], "uv_size": [2, 9]},
+								"west": {"uv": [44, 18], "uv_size": [2, 9]},
+								"up": {"uv": [42, 16], "uv_size": [2, 2]},
+								"down": {"uv": [44, 18], "uv_size": [2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "Hand_1",
+					"parent": "armorRightArm",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "Skin_Layer2",
+					"parent": "Hand_1",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Muscle_layer2",
+					"parent": "Hand_1",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 12.02, -2],
+							"size": [4, 3, 4],
+							"uv": {
+								"north": {"uv": [108, 29], "uv_size": [4, 3]},
+								"east": {"uv": [104, 29], "uv_size": [4, 3]},
+								"south": {"uv": [116, 29], "uv_size": [4, 3]},
+								"west": {"uv": [112, 29], "uv_size": [4, 3]},
+								"up": {"uv": [112, 8], "uv_size": [4, 4]},
+								"down": {"uv": [112, 20], "uv_size": [4, -4]}
+							}
+						}
+					]
+				},
+				{
+					"name": "right_arm2",
+					"parent": "Hand_1",
+					"pivot": [-5, -2, 0],
+					"cubes": [
+						{
+							"origin": [-6.94082, 12.35257, -1],
+							"size": [2, 3, 2],
+							"inflate": -0.02,
+							"uv": {
+								"north": {"uv": [42, 27], "uv_size": [2, 3]},
+								"east": {"uv": [40, 27], "uv_size": [2, 3]},
+								"south": {"uv": [46, 27], "uv_size": [2, 3]},
+								"west": {"uv": [44, 27], "uv_size": [2, 3]},
+								"up": {"uv": [42, 14], "uv_size": [2, 2]},
+								"down": {"uv": [46, 18], "uv_size": [2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "armorLeftArm",
+					"pivot": [5, 22, 0]
+				},
+				{
+					"name": "Arm_2",
+					"parent": "armorLeftArm",
+					"pivot": [5, 22, 0]
+				},
+				{
+					"name": "Skin_Layer8",
+					"parent": "Arm_2",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Muscle_layer7",
+					"parent": "Arm_2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [4, 15, -2],
+							"size": [4, 9, 4],
+							"uv": {
+								"north": {"uv": [112, 20], "uv_size": [-4, 9]},
+								"east": {"uv": [116, 20], "uv_size": [-4, 9]},
+								"south": {"uv": [120, 20], "uv_size": [-4, 9]},
+								"west": {"uv": [108, 20], "uv_size": [-4, 9]},
+								"up": {"uv": [112, 16], "uv_size": [-4, 4]},
+								"down": {"uv": [116, 16], "uv_size": [-4, -4]}
+							}
+						}
+					]
+				},
+				{
+					"name": "left_arm",
+					"parent": "Arm_2",
+					"pivot": [5, 23.175, 0],
+					"rotation": [0, 0, -5],
+					"cubes": [
+						{
+							"origin": [4.25, 15.175, -1],
+							"size": [2, 8.65, 2],
+							"inflate": -0.02,
+							"uv": {
+								"north": {"uv": [44, 18], "uv_size": [-2, 9]},
+								"east": {"uv": [46, 18], "uv_size": [-2, 9]},
+								"south": {"uv": [48, 18], "uv_size": [-2, 9]},
+								"west": {"uv": [42, 18], "uv_size": [-2, 9]},
+								"up": {"uv": [44, 16], "uv_size": [-2, 2]},
+								"down": {"uv": [46, 18], "uv_size": [-2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "Hand_2",
+					"parent": "armorLeftArm",
+					"pivot": [5, 22, 0]
+				},
+				{
+					"name": "Skin_Layer9",
+					"parent": "Hand_2",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Muscle_layer10",
+					"parent": "Hand_2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [4, 12.02, -2],
+							"size": [4, 3, 4],
+							"uv": {
+								"north": {"uv": [112, 29], "uv_size": [-4, 3]},
+								"east": {"uv": [116, 29], "uv_size": [-4, 3]},
+								"south": {"uv": [120, 29], "uv_size": [-4, 3]},
+								"west": {"uv": [108, 29], "uv_size": [-4, 3]},
+								"up": {"uv": [116, 8], "uv_size": [-4, 4]},
+								"down": {"uv": [116, 20], "uv_size": [-4, -4]}
+							}
+						}
+					]
+				},
+				{
+					"name": "left_arm2",
+					"parent": "Hand_2",
+					"pivot": [5, -2, 0],
+					"cubes": [
+						{
+							"origin": [4.94082, 12.35257, -1],
+							"size": [2, 3, 2],
+							"inflate": -0.02,
+							"uv": {
+								"north": {"uv": [44, 27], "uv_size": [-2, 3]},
+								"east": {"uv": [46, 27], "uv_size": [-2, 3]},
+								"south": {"uv": [48, 27], "uv_size": [-2, 3]},
+								"west": {"uv": [42, 27], "uv_size": [-2, 3]},
+								"up": {"uv": [44, 14], "uv_size": [-2, 2]},
+								"down": {"uv": [48, 18], "uv_size": [-2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "armorRightLeg",
+					"pivot": [-2, 12, 0]
+				},
+				{
+					"name": "Leg_1",
+					"parent": "armorRightLeg",
+					"pivot": [-2, 12, 0]
+				},
+				{
+					"name": "Skin_Layer4",
+					"parent": "Leg_1",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Muscle_layer9",
+					"parent": "Leg_1",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-4, 3, -2],
+							"size": [4, 9, 4],
+							"uv": {
+								"north": {"uv": [68, 20], "uv_size": [4, 9]},
+								"east": {"uv": [64, 20], "uv_size": [4, 9]},
+								"south": {"uv": [76, 20], "uv_size": [4, 9]},
+								"west": {"uv": [72, 20], "uv_size": [4, 9]},
+								"up": {"uv": [68, 16], "uv_size": [4, 4]},
+								"down": {"uv": [76, 20], "uv_size": [4, -4]}
+							}
+						}
+					]
+				},
+				{
+					"name": "right_leg",
+					"parent": "Leg_1",
+					"pivot": [-2, -12, 0],
+					"cubes": [
+						{
+							"origin": [-3, 3, -1],
+							"size": [2, 9, 2],
+							"inflate": -0.02,
+							"uv": {
+								"north": {"uv": [2, 18], "uv_size": [2, 9]},
+								"east": {"uv": [0, 18], "uv_size": [2, 9]},
+								"south": {"uv": [6, 18], "uv_size": [2, 9]},
+								"west": {"uv": [4, 18], "uv_size": [2, 9]},
+								"up": {"uv": [2, 16], "uv_size": [2, 2]},
+								"down": {"uv": [4, 18], "uv_size": [2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "Foot",
+					"parent": "armorRightLeg",
+					"pivot": [-2, 12, 0]
+				},
+				{
+					"name": "Skin_Layer11",
+					"parent": "Foot",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Muscle_layer12",
+					"parent": "Foot",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-4, 0, -2],
+							"size": [4, 3, 4],
+							"uv": {
+								"north": {"uv": [68, 29], "uv_size": [4, 3]},
+								"east": {"uv": [64, 29], "uv_size": [4, 3]},
+								"south": {"uv": [76, 29], "uv_size": [4, 3]},
+								"west": {"uv": [72, 29], "uv_size": [4, 3]},
+								"up": {"uv": [60, 16], "uv_size": [4, 4]},
+								"down": {"uv": [72, 20], "uv_size": [4, -4]}
+							}
+						}
+					]
+				},
+				{
+					"name": "right_leg3",
+					"parent": "Foot",
+					"pivot": [-2, -12, 0],
+					"cubes": [
+						{
+							"origin": [-3, 0.04, -1],
+							"size": [2, 3, 2],
+							"inflate": -0.02,
+							"uv": {
+								"north": {"uv": [2, 27], "uv_size": [2, 3]},
+								"east": {"uv": [0, 27], "uv_size": [2, 3]},
+								"south": {"uv": [6, 27], "uv_size": [2, 3]},
+								"west": {"uv": [4, 27], "uv_size": [2, 3]},
+								"up": {"uv": [0, 16], "uv_size": [2, 2]},
+								"down": {"uv": [6, 18], "uv_size": [2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "armorLeftLeg",
+					"pivot": [2, 12, 0]
+				},
+				{
+					"name": "Leg_2",
+					"parent": "armorLeftLeg",
+					"pivot": [2, 12, 0]
+				},
+				{
+					"name": "Skin_Layer5",
+					"parent": "Leg_2",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Muscle_layer3",
+					"parent": "Leg_2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [0, 3, -2],
+							"size": [4, 9, 4],
+							"uv": {
+								"north": {"uv": [72, 20], "uv_size": [-4, 9]},
+								"east": {"uv": [76, 20], "uv_size": [-4, 9]},
+								"south": {"uv": [80, 20], "uv_size": [-4, 9]},
+								"west": {"uv": [68, 20], "uv_size": [-4, 9]},
+								"up": {"uv": [72, 16], "uv_size": [-4, 4]},
+								"down": {"uv": [80, 20], "uv_size": [-4, -4]}
+							}
+						}
+					]
+				},
+				{
+					"name": "left_leg",
+					"parent": "Leg_2",
+					"pivot": [2, -12, 0],
+					"cubes": [
+						{
+							"origin": [1, 3, -1],
+							"size": [2, 9, 2],
+							"inflate": -0.02,
+							"uv": {
+								"north": {"uv": [4, 18], "uv_size": [-2, 9]},
+								"east": {"uv": [6, 18], "uv_size": [-2, 9]},
+								"south": {"uv": [8, 18], "uv_size": [-2, 9]},
+								"west": {"uv": [2, 18], "uv_size": [-2, 9]},
+								"up": {"uv": [4, 16], "uv_size": [-2, 2]},
+								"down": {"uv": [6, 18], "uv_size": [-2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "Foot2",
+					"parent": "armorLeftLeg",
+					"pivot": [2, 12, 0]
+				},
+				{
+					"name": "Skin_Layer10",
+					"parent": "Foot2",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Muscle_layer11",
+					"parent": "Foot2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [0, 0, -2],
+							"size": [4, 3, 4],
+							"uv": {
+								"north": {"uv": [72, 29], "uv_size": [-4, 3]},
+								"east": {"uv": [76, 29], "uv_size": [-4, 3]},
+								"south": {"uv": [80, 29], "uv_size": [-4, 3]},
+								"west": {"uv": [68, 29], "uv_size": [-4, 3]},
+								"up": {"uv": [64, 16], "uv_size": [-4, 4]},
+								"down": {"uv": [76, 20], "uv_size": [-4, -4]}
+							}
+						}
+					]
+				},
+				{
+					"name": "left_leg3",
+					"parent": "Foot2",
+					"pivot": [2, -12, 0],
+					"cubes": [
+						{
+							"origin": [1, 0.04, -1],
+							"size": [2, 3, 2],
+							"inflate": -0.02,
+							"uv": {
+								"north": {"uv": [4, 27], "uv_size": [-2, 3]},
+								"east": {"uv": [6, 27], "uv_size": [-2, 3]},
+								"south": {"uv": [8, 27], "uv_size": [-2, 3]},
+								"west": {"uv": [2, 27], "uv_size": [-2, 3]},
+								"up": {"uv": [2, 16], "uv_size": [-2, 2]},
+								"down": {"uv": [8, 18], "uv_size": [-2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "armorHead",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "Musle_Layer",
+					"parent": "armorHead",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 24, -4], "size": [8, 8, 8], "uv": [64, 0]}
+					]
+				},
+				{
+					"name": "Skeletal_Layer",
+					"parent": "armorHead",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 24, -4], "size": [8, 8, 8], "inflate": -0.02, "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

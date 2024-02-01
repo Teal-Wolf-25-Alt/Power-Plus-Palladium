@@ -1,0 +1,432 @@
+{
+  "type": "palladium:compound",
+  "layers": [{
+      "type": "geckolib:default",
+	  "model": "donor:geo/undead/blades.geo.json",
+      "texture": {
+        "base": "donor:textures/models/undead/blades.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "donor:textures/alpha_mask/undead/blood_blades/blades_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+    "type": "palladium:animation_timer_ability",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Blood_Blades_Anim_Model"
+		}
+        },
+        "output": "donor:textures/alpha_mask/undead/blood_blades/blades_#TIMER_temp"
+      }
+    },
+	
+  {
+  "model": {
+	"normal": "donor:geo/undead/undead_body.geo.json",
+    "slim": "donor:geo/undead/undead_body.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": {
+        "base": "donor:textures/models/undead/body_layer.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "donor:textures/alpha_mask/undead/head/head_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Head"
+	}
+        },
+        "output": "donor:textures/alpha_mask/undead/chest/head_temp_#TIMER"
+      }
+	},
+	 {
+  "model": {
+	"normal": "donor:geo/undead/undead_head_flesh.geo.json",
+    "slim": "donor:geo/undead/undead_head_flesh.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": "#entity",
+  "conditions" : [{
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Head",
+    "min_score": 10,
+    "max_score": 16
+	}]
+	},
+  {
+  "model": {
+	"normal": "donor:geo/undead/undead_body.geo.json",
+    "slim": "donor:geo/undead/undead_body.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": {
+        "base": "donor:textures/models/undead/body_layer.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "donor:textures/alpha_mask/undead/chest/chest_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Body"
+	}
+        },
+        "output": "donor:textures/alpha_mask/undead/chest/chest_temp_#TIMER"
+      }
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_body_flesh.geo.json",
+    "slim": "donor:geo/undead/undead_body_flesh.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": "#entity",
+  "conditions" : [{
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Body",
+    "min_score": 13,
+    "max_score": 19
+	}]
+	},
+	
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_arm_right.geo.json",
+    "slim": "donor:geo/undead/undead_arm_right.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": {
+        "base": "donor:textures/models/undead/body_layer.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "donor:textures/alpha_mask/undead/arms/arms_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Right.Arm"
+	}
+        },
+        "output": "donor:textures/alpha_mask/undead/arms/arms_temp_#TIMER"
+      },
+	  "conditions" : [{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Arms_Right_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_arm_right_flesh.geo.json",
+    "slim": "donor:geo/undead/undead_arm_right_flesh.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": "#entity",
+  "conditions" : [{
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Right.Arm",
+    "min_score": 11,
+    "max_score": 18
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Arms_Right_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_arm_right.geo.json",
+    "slim": "donor:geo/undead/undead_arm_right.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": {
+        "base": "donor:textures/models/undead/body_layer.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "donor:textures/alpha_mask/undead/hands/hands_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Right.Hand"
+	}
+        },
+        "output": "donor:textures/alpha_mask/undead/hands/hands_temp_#TIMER"
+      },
+	  "conditions" : [{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Arms_Right_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_hand_right_flesh.geo.json",
+    "slim": "donor:geo/undead/undead_hand_right_flesh.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": "#entity",
+  "conditions" : [{
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Right.Hand",
+    "min_score": 7,
+    "max_score": 12
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Arms_Right_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_right_bone.geo.json",
+    "slim": "donor:geo/undead/undead_right_bone.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": "donor:textures/models/undead/body_layer.png",
+  "conditions" : [{
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Right.Hand",
+    "min_score": 3,
+    "max_score": 3
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Part_Bullet.Bone_Blades"
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Arms_Right_Skin"
+	}]
+	},
+	
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_arm_left.geo.json",
+    "slim": "donor:geo/undead/undead_arm_left.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": {
+        "base": "donor:textures/models/undead/body_layer.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "donor:textures/alpha_mask/undead/arms/arms_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Left.Arm"
+	}
+        },
+        "output": "donor:textures/alpha_mask/undead/arms/arms_temp_#TIMER"
+      },
+	  "conditions" : [{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Arms_Left_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_arm_left_flesh.geo.json",
+    "slim": "donor:geo/undead/undead_arm_left_flesh.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": "#entity",
+  "conditions" : [{
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Left.Arm",
+    "min_score": 11,
+    "max_score": 18
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Arms_Left_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_arm_left.geo.json",
+    "slim": "donor:geo/undead/undead_arm_left.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": {
+        "base": "donor:textures/models/undead/body_layer.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "donor:textures/alpha_mask/undead/hands/hands_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Left.Hand"
+	}
+        },
+        "output": "donor:textures/alpha_mask/undead/hands/hands_temp_#TIMER"
+      },
+	  "conditions" : [{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Arms_Left_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_hand_left_flesh.geo.json",
+    "slim": "donor:geo/undead/undead_hand_left_flesh.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": "#entity",
+  "conditions" : [{
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Left.Hand",
+    "min_score": 7,
+    "max_score": 12
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Arms_Left_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_left_bone.geo.json",
+    "slim": "donor:geo/undead/undead_left_bone.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": "donor:textures/models/undead/body_layer.png",
+  "conditions" : [{
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Left.Hand",
+    "min_score": 3,
+    "max_score": 3
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Part_Bullet.Bone_Blades"
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Arms_Left_Skin"
+	}]
+	},
+	
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_body.geo.json",
+    "slim": "donor:geo/undead/undead_body.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": {
+        "base": "donor:textures/models/undead/body_layer.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "donor:textures/alpha_mask/undead/legs/legs_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Legs"
+	}
+        },
+        "output": "donor:textures/alpha_mask/undead/legs/legs_temp_#TIMER"
+      },
+	  "conditions" : [{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Legs_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_legs_flesh.geo.json",
+    "slim": "donor:geo/undead/undead_legs_flesh.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": "#entity",
+  "conditions" : [{
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Legs",
+    "min_score": 12,
+    "max_score": 20
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Legs_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_body.geo.json",
+    "slim": "donor:geo/undead/undead_body.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": {
+        "base": "donor:textures/models/undead/body_layer.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "donor:textures/alpha_mask/undead/feet/feet_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Feet"
+	}
+        },
+        "output": "donor:textures/alpha_mask/undead/feet/feet_temp_#TIMER"
+      },
+	  "conditions" : [{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Legs_Skin"
+	}]
+	},
+	{
+  "model": {
+	"normal": "donor:geo/undead/undead_feet_flesh.geo.json",
+    "slim": "donor:geo/undead/undead_feet_flesh.geo.json"
+  },
+  "type": "geckolib:default",
+  "texture": "#entity",
+  "conditions" : [{
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Regenerative_Segmentation.Feet",
+    "min_score": 5,
+    "max_score": 11
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "power": "donor:regenerative_segmentation",
+    "ability": "Hide_Legs_Skin"
+	}]
+	}
+]}
