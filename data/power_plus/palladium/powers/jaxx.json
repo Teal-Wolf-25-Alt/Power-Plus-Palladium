@@ -403,7 +403,7 @@
       "hide_in_bar": true,
       "icon": "power_plus:staff",
       "gui_position": [0,8],
-      "commands": ["superpower add power_plus:jaxx_staff Teal_Wolf_25"],
+      "commands": ["superpower add power_plus:jaxx_staff"],
       "conditions": {
         "unlocking": [
           {

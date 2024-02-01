@@ -1,0 +1,66 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "armorRightArm",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "Arm_1",
+					"parent": "armorRightArm",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "Skin_Layer3",
+					"parent": "Arm_1",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Muscle_layer8",
+					"parent": "Arm_1",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "right_arm",
+					"parent": "Arm_1",
+					"pivot": [-5, 23.175, 0],
+					"rotation": [0, 0, 5]
+				},
+				{
+					"name": "Hand_1",
+					"parent": "armorRightArm",
+					"pivot": [-5, 22, 0]
+				},
+				{
+					"name": "Skin_Layer2",
+					"parent": "Hand_1",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Muscle_layer2",
+					"parent": "Hand_1",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "right_arm2",
+					"parent": "Hand_1",
+					"pivot": [-5, -2, 0],
+					"cubes": [
+						{"origin": [-5.94082, 9.35257, -1.5], "size": [0, 6, 3], "uv": [40, 27]},
+						{"origin": [-5.94082, 9.35257, -1.5], "size": [0, 6, 3], "pivot": [-5.94082, 12.35257, 0], "rotation": [0, -90, 0], "uv": [40, 27]}
+					]
+				}
+			]
+		}
+	]
+}

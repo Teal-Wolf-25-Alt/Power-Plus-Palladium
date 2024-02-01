@@ -1,0 +1,1822 @@
+{
+  "name": "Regenerative Segmentation",
+  "background": "minecraft:textures/block/tinted_glass.png",
+  "icon": "donor:textures/gui/life/dna_icon.png",
+  "ability_bar_texture": "donor:textures/gui/life/ability_bars/powers.png",
+  "persistent_data": true,
+  "primary_color": "#bdd4fd",
+  "secondary_color": "#6285a0",
+  "abilities": {
+	  "Regenerative_Segmentation_Loop": {
+    "type": "palladium:command",
+    "hidden": true,
+    "first_tick_commands": [
+	"scoreboard objectives add power_plus.Donor.Toggle.Regenerative_Segmentation dummy",
+	"execute unless score @s power_plus.Donor.Toggle.Regenerative_Segmentation matches 0.. run scoreboard players set @s power_plus.Donor.Toggle.Regenerative_Segmentation 0",
+    "scoreboard objectives add Power.Toggleable dummy",
+	"execute unless score @s Power.Toggleable matches 0.. run scoreboard players set @s Power.Toggleable 0",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Head=11..}] power_plus.Donor.Regenerative_Segmentation.Head 17",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Body=14..}] power_plus.Donor.Regenerative_Segmentation.Body 20",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Right.Arm=12..}] power_plus.Donor.Regenerative_Segmentation.Right.Arm 18",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Left.Arm=12..}] power_plus.Donor.Regenerative_Segmentation.Left.Arm 18",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Right.Hand=8..}] power_plus.Donor.Regenerative_Segmentation.Right.Hand 12",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Left.Hand=8..}] power_plus.Donor.Regenerative_Segmentation.Left.Hand 12",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Legs=13..}] power_plus.Donor.Regenerative_Segmentation.Legs 20",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Feet=6..}] power_plus.Donor.Regenerative_Segmentation.Feet 11",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Head dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Body dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Right.Arm dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Left.Arm dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Right.Hand dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Left.Hand dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Legs dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Feet dummy",
+	
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Stage.Head dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Stage.Body dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Stage.Legs dummy",
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Stage.Feet dummy",
+	
+	"scoreboard objectives add power_plus.Donor.Regenerative_Segmentation.Halt dummy",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Halt matches 0.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Halt 0",
+	
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Stage.Head matches 0.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Head 17",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Stage.Body matches 0.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Body 20",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm matches 0.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 18",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm matches 0.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 18",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand matches 0.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 12",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand matches 0.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 12",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Stage.Legs matches 0.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Legs 20",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Stage.Feet matches 0.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Feet 11"],
+    "last_tick_commands": [],
+    "commands": []
+},
+		"Body_Render": {
+      "type": "palladium:render_layer",
+      "render_layer": "donor:regenerative_segmentation"
+    },
+		"Toggle_Ability_Bar": {
+		"type": "palladium:command",
+		"hidden": false,
+		"commands": [
+		"scoreboard players add @s power_plus.Donor.Toggle.Regenerative_Segmentation 1",
+		"scoreboard players set @s[scores={power_plus.Donor.Toggle.Regenerative_Segmentation=2..}] power_plus.Donor.Toggle.Regenerative_Segmentation 0",
+		"ability lock @s donor:regenerative_segmentation Toggle_Ability_Bar"],
+			"icon": "donor:textures/gui/life/ability_menu.png",
+		"title": "Toggle Ability Bar",
+		"description": "Toggles off the ability bar for this power but keeps passives enabled.",
+		"gui_position": [-1,0],
+	"conditions": {"unlocking": [{
+    "type": "palladium:scoreboard_score_buyable",
+    "objective": "Power.Toggleable",
+    "score": 0,
+    "icon": "donor:textures/gui/life/ability_menu.png",
+    "description": {"text": "Toggle On/Off"}
+	}]}
+		},
+		"Ability_Bar_Visible": {
+		"type": "palladium:dummy",
+		"hidden": true,
+	"conditions": {"unlocking": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Toggle.Regenerative_Segmentation",
+    "min_score": 0,
+    "max_score": 0
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Toggle.Bars",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+		},
+		
+		"Regenerate_Head": {
+		"type": "palladium:command",
+		"title": "Regenerate Head",
+		"icon": "donor:textures/gui/life/undead_head.png",
+		"commands": [
+		"execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Head=16..}] run particle weave:blood_undead ~ ~1.6 ~ 0.2 0.2 0.2 0 100",
+		"tag @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Head=16..}] add power_plus.Donor.Regen.Cancel",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Head=16..}] power_plus.Donor.Regenerative_Segmentation.Head 4",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Head=16..}] power_plus.Donor.Regenerative_Segmentation.Stage.Head 4",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Head=10..}] power_plus.Donor.Regenerative_Segmentation.Stage.Head 16",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Head=4..10},tag=!power_plus.Donor.Regen.Cancel] power_plus.Donor.Regenerative_Segmentation.Stage.Head 10",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Head=..4}] power_plus.Donor.Regenerative_Segmentation.Stage.Head 4",
+		"tag @s remove power_plus.Donor.Regen.Cancel"],
+		"hidden": true,
+		"list_index": 0,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 1,
+    "key_type": "key_bind"
+	}],
+		"unlocking": [
+	        {
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:and",
+    "conditions": [{
+    "type": "palladium:crouching"
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Body",
+    "min_score": 7,
+    "max_score": 110
+	}]
+	}]
+	},
+		{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]}
+        },
+		"Eject_Head": {
+		"type": "palladium:command",
+		"title": "Regenerate Whole Body",
+		"icon": "donor:textures/gui/life/undead_head_eject.png",
+		"commands": [
+	"particle weave:blood_con ~ ~ ~ 0.4 0.4 0.4 0 100",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Body 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Right.Arm 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Left.Arm 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Right.Hand 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Left.Hand 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Legs 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Feet 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Legs 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Feet 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Body 0"],
+		"hidden": true,
+		"list_index": 0,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 0,
+    "key_type": "key_bind"
+	}],
+	"unlocking": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Body",
+    "min_score": 7,
+    "max_score": 200
+	},
+	{
+    "type": "palladium:crouching"
+	},
+		{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]}
+        },	
+		"Eject_Head_Motion": {
+    "type": "donor:motion_abil",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "motion_scale": 2.5,
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Eject_Head"
+	}]}
+},
+
+	"Regenerate_Body": {
+		"type": "palladium:command",
+		"title": "Regenerate Body",
+		"icon": "donor:textures/gui/life/undead_body.png",
+		"commands": [
+		"execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] run particle weave:blood_undead ~ ~1 ~ 0.4 0.4 0.4 0 100",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Right.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Left.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Right.Arm 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Left.Arm 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Stage.Legs 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Legs 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Stage.Feet 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=20..}] power_plus.Donor.Regenerative_Segmentation.Feet 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=13..}] power_plus.Donor.Regenerative_Segmentation.Stage.Body 20",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=7..13}] power_plus.Donor.Regenerative_Segmentation.Stage.Body 13",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Body=..7}] power_plus.Donor.Regenerative_Segmentation.Stage.Body 7"],
+		"hidden": true,
+		"list_index": 1,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 1,
+    "key_type": "key_bind"
+	}],
+	"unlocking": [
+		{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Regenerate_Whole_Body"
+	},
+	{
+    "type": "palladium:crouching"
+	}]
+	},
+		{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]}
+        },
+	"Regenerate_Whole_Body": {
+		"type": "palladium:command",
+		"title": "Regenerate Whole Body",
+		"icon": "donor:textures/gui/life/steve.png",
+		"commands": [
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Head 16",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Body 20",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 18",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 18",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 12",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 12",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Legs 20",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Feet 11"],
+		"hidden": true,
+		"list_index": 1,
+    "conditions": {"enabling": [{
+    "type": "palladium:activation",
+    "cooldown": 0,
+    "ticks": 40,
+    "key_type": "key_bind"
+	}],
+	"unlocking": [
+		{
+    "type": "palladium:or",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Regenerate_Whole_Body"
+	},
+	{
+    "type": "palladium:crouching"
+	}]
+	},
+		{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]}
+        },	
+	"Regenerate_Arms": {
+		"type": "palladium:command",
+		"title": "Regenerate Arm",
+		"icon": "donor:textures/gui/life/undead_arms.png",
+		"commands": [
+		"execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm=18..}] run particle weave:blood_undead ~ ~1 ~ 0.4 0.4 0.4 0 45",
+		"tag @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm=18..}] add power_plus.Donor.Regen.Cancel",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm=18..}] power_plus.Donor.Regenerative_Segmentation.Left.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm=18..}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm=18..}] power_plus.Donor.Regenerative_Segmentation.Left.Arm 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm=18..}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm=11..}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 18",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm=5..11}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 11",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm=..5},tag=!power_plus.Donor.Regen.Cancel] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 5",
+
+		"execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm=18..}] run particle weave:blood_undead ~ ~1 ~ 0.4 0.4 0.4 0 45",
+		"tag @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm=18..}] add power_plus.Donor.Regen.Cancel",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm=18..}] power_plus.Donor.Regenerative_Segmentation.Right.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm=18..}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm=18..}] power_plus.Donor.Regenerative_Segmentation.Right.Arm 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm=18..}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm=11..}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 18",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm=5..11}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 11",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm=..5},tag=!power_plus.Donor.Regen.Cancel] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 5",
+		"tag @s remove power_plus.Donor.Regen.Cancel"],
+		"hidden": true,
+		"list_index": 2,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 0,
+    "key_type": "key_bind"
+	}],
+		"unlocking": [
+		{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:crouching"
+	}]
+	},
+		{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]}
+        },
+	"Regenerate_Hands": {
+		"type": "palladium:command",
+		"title": "Regenerate Hands",
+		"icon": "donor:textures/gui/life/undead_hands.png",
+		"commands": [
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm=..5,power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand=..3}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 5",
+		"execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand=12..}] run particle weave:blood_undead ~ ~0.7 ~ 0.4 0.4 0.4 0 25",
+		"tag @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand=12..}] add power_plus.Donor.Regen.Cancel",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand=12..}] power_plus.Donor.Regenerative_Segmentation.Left.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand=12..}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand=7..}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 12",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand=3..7}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 7",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand=..3},tag=!power_plus.Donor.Regen.Cancel] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 3",
+		
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm=..5,power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand=..3}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 5",
+		"execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand=12..}] run particle weave:blood_undead ~ ~0.7 ~ 0.4 0.4 0.4 0 25",
+		"tag @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand=12..}] add power_plus.Donor.Regen.Cancel",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand=12..}] power_plus.Donor.Regenerative_Segmentation.Right.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand=12..}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand=7..}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 12",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand=3..7}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 7",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand=..3},tag=!power_plus.Donor.Regen.Cancel] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 3",
+		"tag @s remove power_plus.Donor.Regen.Cancel"],
+		"hidden": true,
+		"list_index": 2,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 0,
+    "key_type": "key_bind"
+	}],
+		"unlocking": [
+		{
+    "type": "palladium:crouching"
+	},
+		{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]}
+        },
+	"Regenerate_Legs": {
+		"type": "palladium:command",
+		"title": "Regenerate Legs",
+		"icon": "donor:textures/gui/life/undead_legs.png",
+		"commands": [
+		"execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Legs=20..}] run particle weave:blood_undead ~ ~0.6 ~ 0.4 0.4 0.4 0 45",
+		"tag @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Legs=20..}] add power_plus.Donor.Regen.Cancel",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Legs=20..}] power_plus.Donor.Regenerative_Segmentation.Stage.Feet 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Legs=20..}] power_plus.Donor.Regenerative_Segmentation.Feet 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Legs=20..}] power_plus.Donor.Regenerative_Segmentation.Legs 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Legs=20..}] power_plus.Donor.Regenerative_Segmentation.Stage.Legs 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Legs=12..}] power_plus.Donor.Regenerative_Segmentation.Stage.Legs 20",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Legs=5..12}] power_plus.Donor.Regenerative_Segmentation.Stage.Legs 12",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Legs=..5},tag=!power_plus.Donor.Regen.Cancel] power_plus.Donor.Regenerative_Segmentation.Stage.Legs 5",
+		"tag @s remove power_plus.Donor.Regen.Cancel"],
+		"hidden": true,
+		"list_index": 3,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 0,
+    "key_type": "key_bind"
+	}],
+		"unlocking": [
+		{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:crouching"
+	}]
+	},
+		{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]}
+        },
+	"Regenerate_Feet": {
+		"type": "palladium:command",
+		"title": "Regenerate Feet",
+		"icon": "donor:textures/gui/life/undead_feet.png",
+		"commands": [
+		"execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Feet=11..}] run particle weave:blood_undead ~ ~0.2 ~ 0.4 0.4 0.4 0 45",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Legs=..5}] power_plus.Donor.Regenerative_Segmentation.Stage.Legs 5",
+		"tag @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Feet=11..}] add power_plus.Donor.Regen.Cancel",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Feet=11..}] power_plus.Donor.Regenerative_Segmentation.Feet 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Feet=11..}] power_plus.Donor.Regenerative_Segmentation.Stage.Feet 0",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Feet=5..}] power_plus.Donor.Regenerative_Segmentation.Stage.Feet 11",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Feet=2..5}] power_plus.Donor.Regenerative_Segmentation.Stage.Feet 5",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Feet=..2},tag=!power_plus.Donor.Regen.Cancel] power_plus.Donor.Regenerative_Segmentation.Stage.Feet 2",
+		"tag @s remove power_plus.Donor.Regen.Cancel"],
+		"hidden": true,
+		"list_index": 3,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 0,
+    "key_type": "key_bind"
+	}],
+		"unlocking": [
+		{
+    "type": "palladium:crouching"
+	},
+		{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]}
+        },
+		
+		"Regen_Loop": {
+		"type": "palladium:command",
+		"icon": "donor:textures/gui/life/undead_feet.png",
+		"first_tick_commands": [
+		"scoreboard objectives add power_plus.Donor.Geo.Gauntlets.Mats dummy",
+		"scoreboard objectives add power_plus.Donor.Geo.Chest.Mats dummy",
+		"scoreboard objectives add power_plus.Donor.Geo.Boots.Mats dummy"
+		],
+		"commands": [
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Halt=..0}] power_plus.Donor.Regenerative_Segmentation.Stage.Head 17",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Halt=..0}] power_plus.Donor.Regenerative_Segmentation.Stage.Body 20",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Halt=..0}] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 18",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Halt=..0}] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 18",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Halt=..0},tag=!power_plus.Donor.Cancel.Hands] power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 12",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Halt=..0},tag=!power_plus.Donor.Cancel.Hands] power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 12",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Halt=..0}] power_plus.Donor.Regenerative_Segmentation.Stage.Legs 20",
+	"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Halt=..0}] power_plus.Donor.Regenerative_Segmentation.Stage.Feet 11",
+	
+	"scale set pehkui:eye_height 1",
+	"execute unless score @s power_plus.Donor.Geo.Boots.Mats matches 8.. run scale set pehkui:eye_height 0.9 @s[scores={power_plus.Donor.Regenerative_Segmentation.Feet=0}]",
+	"execute unless score @s power_plus.Donor.Geo.Boots.Mats matches 8.. run scale set pehkui:eye_height 0.6 @s[scores={power_plus.Donor.Regenerative_Segmentation.Legs=0}]",
+	"execute unless score @s power_plus.Donor.Geo.Gauntlets.Mats matches 12.. unless score @s power_plus.Donor.Geo.Chest.Mats matches 12.. unless score @s power_plus.Donor.Geo.Boots.Mats matches 8.. run scale set pehkui:eye_height 0.2 @s[scores={power_plus.Donor.Regenerative_Segmentation.Body=0}]",
+	
+	"scale set pehkui:hitbox_height 1",
+	"execute unless score @s power_plus.Donor.Geo.Boots.Mats matches 8.. run scale set pehkui:hitbox_height 0.9 @s[scores={power_plus.Donor.Regenerative_Segmentation.Feet=0}]",
+	"execute unless score @s power_plus.Donor.Geo.Boots.Mats matches 8.. run scale set pehkui:hitbox_height 0.6 @s[scores={power_plus.Donor.Regenerative_Segmentation.Legs=0}]",
+	"execute unless score @s power_plus.Donor.Geo.Gauntlets.Mats matches 12.. unless score @s power_plus.Donor.Geo.Chest.Mats matches 12.. unless score @s power_plus.Donor.Geo.Boots.Mats matches 8.. run scale set pehkui:hitbox_height 0.3 @s[scores={power_plus.Donor.Regenerative_Segmentation.Body=0}]",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Head >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Head run scoreboard players add @s power_plus.Donor.Regenerative_Segmentation.Head 1",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Body >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Body run scoreboard players add @s power_plus.Donor.Regenerative_Segmentation.Body 1",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Right.Arm >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm run scoreboard players add @s power_plus.Donor.Regenerative_Segmentation.Right.Arm 1",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Left.Arm >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm run scoreboard players add @s power_plus.Donor.Regenerative_Segmentation.Left.Arm 1",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Right.Hand >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand run scoreboard players add @s power_plus.Donor.Regenerative_Segmentation.Right.Hand 1",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Left.Hand >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand run scoreboard players add @s power_plus.Donor.Regenerative_Segmentation.Left.Hand 1",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Legs >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Legs run scoreboard players add @s power_plus.Donor.Regenerative_Segmentation.Legs 1",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Feet >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Feet run scoreboard players add @s power_plus.Donor.Regenerative_Segmentation.Feet 1",
+	
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Head matches 4.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Body 0",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Body matches 7.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Legs 0",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Body matches 7.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 0",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Body matches 7.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 0",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Right.Arm matches 5.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Right.Hand 0",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Left.Arm matches 5.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Left.Hand 0",
+	"execute unless score @s power_plus.Donor.Regenerative_Segmentation.Legs matches 5.. run scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Feet 0",
+	"execute if score @s power_plus.Donor.Regenerative_Segmentation.Head >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Head run scoreboard players operation @s power_plus.Donor.Regenerative_Segmentation.Head = @s power_plus.Donor.Regenerative_Segmentation.Stage.Head",
+	"execute if score @s power_plus.Donor.Regenerative_Segmentation.Body >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Body run scoreboard players operation @s power_plus.Donor.Regenerative_Segmentation.Body = @s power_plus.Donor.Regenerative_Segmentation.Stage.Body",
+	"execute if score @s power_plus.Donor.Regenerative_Segmentation.Right.Arm >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm run scoreboard players operation @s power_plus.Donor.Regenerative_Segmentation.Right.Arm = @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm",
+	"execute if score @s power_plus.Donor.Regenerative_Segmentation.Left.Arm >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm run scoreboard players operation @s power_plus.Donor.Regenerative_Segmentation.Left.Arm = @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm",
+	"execute if score @s power_plus.Donor.Regenerative_Segmentation.Right.Hand >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand run scoreboard players operation @s power_plus.Donor.Regenerative_Segmentation.Right.Hand = @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand",
+	"execute if score @s power_plus.Donor.Regenerative_Segmentation.Left.Hand >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand run scoreboard players operation @s power_plus.Donor.Regenerative_Segmentation.Left.Hand = @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand",
+	"execute if score @s power_plus.Donor.Regenerative_Segmentation.Legs >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Legs run scoreboard players operation @s power_plus.Donor.Regenerative_Segmentation.Legs = @s power_plus.Donor.Regenerative_Segmentation.Stage.Legs",
+	"execute if score @s power_plus.Donor.Regenerative_Segmentation.Feet >= @s power_plus.Donor.Regenerative_Segmentation.Stage.Feet run scoreboard players operation @s power_plus.Donor.Regenerative_Segmentation.Feet = @s power_plus.Donor.Regenerative_Segmentation.Stage.Feet",
+	"tag @s remove power_plus.Donor.Cancel.Hands"],
+		"hidden": true,
+		"list_index": 3
+        },
+		
+	"Hide_Head_Skin": {
+    "type": "palladium:hide_body_part",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "body_parts": ["head",
+        "head_overlay"],
+		"conditions": {"enabling": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Head",
+    "min_score": 0,
+    "max_score": 15
+	}]}
+},
+	"Hide_Body_Skin": {
+    "type": "palladium:hide_body_part",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "body_parts": ["chest",
+        "chest_overlay"],
+		"conditions": {"enabling": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Body",
+    "min_score": 0,
+    "max_score": 18
+	}]}
+},
+	"Hide_Arms_Right_Skin": {
+    "type": "palladium:hide_body_part",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "body_parts": [
+		"right_arm",
+        "right_arm_overlay"],
+		"conditions": {"enabling": [{
+    "type": "palladium:or",
+    "conditions": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Arm",
+    "min_score": 0,
+    "max_score": 17
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Hand",
+    "min_score": 0,
+    "max_score": 11
+	}]
+	}]}
+},
+	"Hide_Arms_Left_Skin": {
+    "type": "palladium:hide_body_part",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "body_parts": [
+		"left_arm",
+        "left_arm_overlay"],
+		"conditions": {"enabling": [{
+    "type": "palladium:or",
+    "conditions": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Arm",
+    "min_score": 0,
+    "max_score": 17
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Hand",
+    "min_score": 0,
+    "max_score": 11
+	}]
+	}]}
+},
+	"Hide_Legs_Skin": {
+    "type": "palladium:hide_body_part",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "body_parts": [
+		"left_leg",
+        "left_leg_overlay",
+		"right_leg",
+        "right_leg_overlay"],
+		"conditions": {"enabling": [{
+    "type": "palladium:or",
+    "conditions": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 0,
+    "max_score": 19
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Feet",
+    "min_score": 0,
+    "max_score": 10
+	}]
+	}]}
+},
+		
+		"Head_Flight": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "palladium:levitation_speed",
+    "amount": 1.6,
+    "operation": 0,
+    "uuid": "1cfc6a66-8d7f-11ee-b9d1-0242ac120002",
+	     "conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Remove_Chest"
+	}]}
+},
+		"Head_Flight_Part": {
+		"type": "palladium:command",
+		"commands": ["particle weave:blood_undead ~ ~-0.15 ~ 0.1 0.1 0.1 0 5"],
+		"hidden": true,
+		"list_index": 1,
+    "conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Remove_Chest"
+	},
+	{
+    "type": "palladium:is_hovering_or_levitating"
+	}]}
+        },
+
+
+		"Feet_Flight": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "palladium:flight_speed",
+    "amount": 0.6,
+    "operation": 0,
+    "uuid": "1cfc6a66-8d6f-11ee-b9d1-0242ac120002",
+	     "conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 12,
+    "max_score": 2147483647
+	}]}
+},
+		"Feet_Flight_Part": {
+		"type": "palladium:command",
+		"commands": [
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Feet 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Feet 0",
+		"particle weave:blood_undead ~ ~-0.15 ~ 0.1 0.1 0.1 0 5"],
+		"hidden": true,
+		"list_index": 1,
+    "conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 12,
+    "max_score": 2147483647
+},
+	{
+    "type": "palladium:is_hovering_or_flying"
+	}]}
+        },
+		"Hand_Flight": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "palladium:flight_speed",
+    "amount": 0.3,
+    "operation": 0,
+    "uuid": "1cfc6a66-8d6f-21ee-b9d1-0242ac120002",
+	     "conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Arm",
+    "min_score": 11,
+    "max_score": 2147483647
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Arm",
+    "min_score": 11,
+    "max_score": 2147483647
+	},{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Hand",
+    "min_score": 0,
+    "max_score": 0
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Hand",
+    "min_score": 0,
+    "max_score": 0
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 12,
+    "max_score": 2147483647
+	}]}
+},
+		"Hand_Flight_Part": {
+		"type": "palladium:command",
+		"commands": [
+		"execute rotated ~ 0 run particle weave:blood_undead ^-0.5 ^0.6 ^ 0.1 0.1 0.1 0 2",
+		"execute rotated ~ 0 run particle weave:blood_undead ^0.5 ^0.6 ^ 0.1 0.1 0.1 0 2"],
+		"hidden": true,
+		"list_index": 1,
+    "conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Arm",
+    "min_score": 11,
+    "max_score": 2147483647
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Arm",
+    "min_score": 11,
+    "max_score": 2147483647
+	},{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Hand",
+    "min_score": 0,
+    "max_score": 0
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Hand",
+    "min_score": 0,
+    "max_score": 0
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 12,
+    "max_score": 2147483647
+	},
+	{
+    "type": "palladium:is_hovering_or_flying"
+	}]}
+        },
+		
+		"Armor_Remove_Chest": {
+    "type": "palladium:restrict_slots",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "slots": [
+		"chest","trinkets:chest/soul"],
+		"conditions": {"enabling": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Body",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+		"Armor_Remove_Legs": {
+    "type": "palladium:restrict_slots",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "slots": [
+		"legs"],
+		"conditions": {"enabling": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+		"Armor_Remove_Feet": {
+    "type": "palladium:restrict_slots",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "slots": [
+		"feet"],
+		"conditions": {"enabling": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Feet",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+
+	"No_Hand_Right": {
+    "type": "palladium:restrict_slots",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "slots": ["mainhand"],
+	"conditions": {"enabling": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Hand",
+    "min_score": 0,
+    "max_score": 3
+	}]}
+},
+	"No_Hand_Left": {
+    "type": "palladium:restrict_slots",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "slots": ["offhand"],
+	"conditions": {"enabling": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Hand",
+    "min_score": 0,
+    "max_score": 3
+	}]}
+},
+	"No_Feet": {
+    "type": "palladium:animation_timer",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "start_value": 0,
+    "max_value": 4,
+	"conditions": {"enabling": [
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Feet",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+	"No_Legs": {
+    "type": "palladium:animation_timer",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "start_value": 0,
+    "max_value": 4,
+	"conditions": {"enabling": [
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+	"No_Body": {
+    "type": "palladium:animation_timer",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "start_value": 0,
+    "max_value": 4,
+	"conditions": {"enabling": [
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Body",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+
+	"No_Feet_Speed": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "minecraft:generic.movement_speed",
+    "amount": -0.62,
+    "operation": 1,
+    "uuid": "0abef6a4-9589-11ee-b9d1-0242ac120002",
+	     "conditions": {"unlocking": [{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:is_hovering_or_levitating"
+	}]
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Feet",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+
+	"No_Leg_Speed": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "minecraft:generic.movement_speed",
+    "amount": -1000,
+    "operation": 0,
+    "uuid": "01419544-8dd9-11ee-b9d1-0242ac120002",
+	     "conditions": {"unlocking": [{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:is_hovering_or_levitating"
+	}]
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+	"No_Leg_Jump": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "palladium:jump_power",
+    "amount": -1000,
+    "operation": 0,
+    "uuid": "0ab86d8c-8dd9-11ee-b9d1-0242ac120002",
+	     "conditions": {"unlocking": [{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:is_hovering_or_levitating"
+	}]
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+
+	"No_Arm_Swim": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "porting_lib:swim_speed",
+    "amount": -0.5,
+    "operation": 1,
+    "uuid": "947e09a0-94af-11ee-b9d1-0242ac120002",
+	     "conditions": {"unlocking": [
+	{
+    "type": "palladium:and",
+    "conditions": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand",
+    "min_score": 0,
+    "max_score": 0
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand",
+    "min_score": 0,
+    "max_score": 0
+	}]
+	}]}
+},
+	"No_Leg_Swim": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "porting_lib:swim_speed",
+    "amount": -0.5,
+    "operation": 0,
+    "uuid": "947e0e78-94af-11ee-b9d1-0242ac120002",
+	     "conditions": {"unlocking": [{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+	"power": "donor:geokinetic_armor",
+    "ability": "Geo_Boots_Abil_Anim"
+	}]
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+	"No_Swim": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "porting_lib:swim_speed",
+    "amount": -1,
+    "operation": 0,
+    "uuid": "be55a50c-94af-11ee-b9d1-0242ac120002",
+	     "conditions": {"unlocking": [{
+    "type": "palladium:and",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "No_Arm_Swim"
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "No_Leg_Swim"
+	}]
+	}]}
+},
+
+
+	"Remove_Legs": {
+    "type": "palladium:remove_body_part",
+	"body_parts": [
+		"left_leg",
+        "left_leg_overlay",
+		"right_leg",
+        "right_leg_overlay"],
+    "hidden": true,
+    "hidden_in_bar": true,
+	"conditions": {"enabling": [
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Legs",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+	"Remove_Chest": {
+    "type": "palladium:remove_body_part",
+	"body_parts": [
+		"chest",
+        "chest_overlay"],
+    "hidden": true,
+    "hidden_in_bar": true,
+	"conditions": {"enabling": [
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Body",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+	"Remove_Right_Arm": {
+    "type": "palladium:remove_body_part",
+	"body_parts": [
+		"right_arm",
+        "right_arm_overlay"],
+    "hidden": true,
+    "hidden_in_bar": true,
+	"conditions": {"enabling": [
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Arm",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+	"Remove_Left_Arm": {
+    "type": "palladium:remove_body_part",
+	"body_parts": [
+		"left_arm",
+        "left_arm_overlay"],
+    "hidden": true,
+    "hidden_in_bar": true,
+	"conditions": {"enabling": [
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Arm",
+    "min_score": 0,
+    "max_score": 0
+	}]}
+},
+
+		"Part_Bullet.Finger": {
+		"type": "palladium:command",
+		"title": "Compressed blood_undead Bullet",
+		"icon": "donor:textures/gui/life/part_finger.png",
+		"commands": [""],
+		"hidden": true,
+		"list_index": 0,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 10,
+    "key_type": "key_bind"
+	}],
+	"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]
+	}]}
+        },
+		"Part_Bullet_Finger_Proj": {
+      "type": "palladium:projectile",
+	       "entity_type": "palladium:custom_projectile",
+	      "swinging_arm": "main_arm",
+    "hidden": true,
+    "hidden_in_bar": false,
+    "list_index": 0,
+      "velocity": 1.4,
+      "entity_data": {
+        "Damage": 5,
+        "Gravity": 0.01,
+        "Size": 0.5,
+        "Lifetime": 20,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+        "Appearances": [{
+            "Type": "particles",
+            "ParticleType": "weave:blood_con",
+            "Spread": 0,
+			"Amount": 1
+          }]
+      },
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Finger"
+	}]}
+    },
+	
+			"Feet_Ejection": {
+		"type": "palladium:command",
+		"title": "Eject Feet",
+		"icon": "donor:textures/gui/life/undead_head_eject.png",
+		"commands": [
+	"particle weave:blood_con ~ ~ ~ 0.2 0.1 0.2 0 10",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Feet 0",
+	"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Feet 0"],
+		"hidden": true,
+		"list_index": 3,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 40,
+    "key_type": "key_bind"
+	}],
+	"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Feet",
+    "min_score": 5,
+    "max_score": 200
+	}]}
+        },	
+			"Feet_Ejection_Motion": {
+    "type": "donor:motion_abil",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "motion_scale": 2.5,
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Feet_Ejection"
+	}]}
+},
+
+
+
+		"Part_Bullet.Spiiin_Arm": {
+		"type": "palladium:animation_timer",
+		"title": "Part Bullet : Vortex Bullet",
+		"icon": "donor:textures/gui/life/part_finger.png",
+		"start_value": 0,
+		"max_value": 12,
+		"hidden": true,
+		"hidden_in_bar": false,
+		"list_index": 1,
+    "conditions": {"enabling": [{
+    "type": "palladium:held",
+    "key_type": "key_bind"
+	},
+	{
+    "type": "palladium:or",
+    "conditions": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Hand",
+    "min_score": 7,
+    "max_score": 200
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Hand",
+    "min_score": 7,
+    "max_score": 200
+	}]
+	}],
+	"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]
+	}]}
+        },
+		"Part_Bullet.Spiiin_Arm.Right": {
+      "type": "palladium:command",
+    "hidden": true,
+    "hidden_in_bar": false,
+	"commands": [
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Arm 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Right.Arm 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Right.Hand 0"],
+	"conditions": {"unlocking": [{
+    "type": "palladium:animation_timer_ability",
+    "ability": "Part_Bullet.Spiiin_Arm",
+    "min": 12,
+    "max": 12
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Spiiin_Arm"
+	}]}
+    },
+		"Part_Bullet.Spiiin_Arm.Left": {
+      "type": "palladium:command",
+    "hidden": true,
+    "hidden_in_bar": false,
+	"commands": [
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Arm 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Left.Arm 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Left.Hand 0"],
+	"conditions": {"unlocking": [{
+    "type": "palladium:animation_timer_ability",
+    "ability": "Part_Bullet.Spiiin_Arm",
+    "min": 12,
+    "max": 12
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Spiiin_Arm"
+	}]}
+    },
+		"Part_Bullet_Arm_Proj": {
+      "type": "palladium:projectile",
+	       "entity_type": "palladium:custom_projectile",
+	      "swinging_arm": "main_arm",
+    "hidden": true,
+    "hidden_in_bar": false,
+    "list_index": 0,
+      "velocity": 2.5,
+      "entity_data": {
+        "Damage": 14,
+        "Gravity": 0.01,
+        "Size": 0.8,
+        "Lifetime": 120,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+        "Appearances": [{
+            "Type": "particles",
+            "ParticleType": "weave:blood_con",
+            "Spread": 0,
+			"Amount": 3
+          },
+		  {
+            "Type": "renderLayer",
+            "RenderLayer": "donor:part_arm"
+          }]
+      },
+	"conditions": {"unlocking": [{
+    "type": "palladium:animation_timer_ability",
+    "ability": "Part_Bullet.Spiiin_Arm",
+    "min": 11,
+    "max": 11
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Spiiin_Arm"
+	}]}
+    },
+	
+		
+		"Part_Bullet.Hand": {
+		"type": "palladium:command",
+		"title": "Part Bullet : Hand",
+		"icon": "donor:textures/gui/life/part_finger.png",
+		"commands": [],
+		"hidden": true,
+		"hidden_in_bar": true,
+		"list_index": 1,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 25,
+    "key_type": "key_bind"
+	},
+	{
+    "type": "palladium:or",
+    "conditions": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Hand",
+    "min_score": 7,
+    "max_score": 200
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Hand",
+    "min_score": 7,
+    "max_score": 200
+	}]
+	}]
+	},
+	"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]
+	}]}
+        },
+		"Part_Bullet.Hand.Right": {
+      "type": "palladium:command",
+    "hidden": true,
+    "hidden_in_bar": false,
+	"commands": [
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Right.Hand 0"],
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Hand"
+	}]}
+    },
+		"Part_Bullet.Hand.Left": {
+      "type": "palladium:command",
+    "hidden": true,
+    "hidden_in_bar": false,
+	"commands": [
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Left.Hand 0"],
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Hand"
+	}]}
+    },
+		"Part_Bullet_Hand_Proj": {
+      "type": "palladium:projectile",
+	       "entity_type": "palladium:custom_projectile",
+	      "swinging_arm": "main_arm",
+    "hidden": true,
+    "hidden_in_bar": false,
+    "list_index": 0,
+      "velocity": 1.8,
+      "entity_data": {
+        "Damage": 8,
+        "Gravity": 0.01,
+        "Size": 0.8,
+        "Lifetime": 120,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+        "Appearances": [{
+            "Type": "particles",
+            "ParticleType": "weave:blood_con",
+            "Spread": 0,
+			"Amount": 1
+          },
+		  {
+            "Type": "renderLayer",
+            "RenderLayer": "donor:part_hand"
+          }]
+      },
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Hand"
+	}]}
+    },
+	
+		"Part_Bullet.Dead_Road": {
+		"type": "palladium:animation_timer",
+		"title": "Part Bullet : blood_undead Stream",
+		"list_index": 2,
+		"icon": "donor:textures/gui/life/part_finger.png",
+		"hidden": true,
+		"hidden_in_bar": false,
+		"start_value": 0,
+		"max_value": 6,
+    "conditions": {"enabling": [{
+    "type": "palladium:held",
+    "cooldown": 0,
+    "key_type": "key_bind"
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Arm",
+    "min_score": 11,
+    "max_score": 200
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Arm",
+    "min_score": 11,
+    "max_score": 200
+	}],
+	"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Bone_Blades"
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Blood_Blades_Abil"
+	},
+	{
+    "type": "palladium:crouching"
+},
+{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]
+	}]}
+        },
+		"Part_Bullet.Dead_Road_Aim": {
+    "type": "palladium:aim",
+    "hidden": true,
+    "time": 6,
+    "arm": "both",
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Dead_Road"
+	}]}
+},
+		"Part_Bullet.Dead_Road_Arm": {
+    "type": "palladium:show_both_arms",
+    "hidden": true,
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Dead_Road"
+	}]}
+},
+		"Part_Bullet.Dead_Com": {
+			"type": "palladium:command",
+		"commands": [
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Right.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Left.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 0",
+		"execute anchored eyes run function donor:powers/dead_road"],
+		"hidden": true,
+		"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Dead_Road"
+	},
+	{
+    "type": "palladium:ability_integer_property",
+    "ability": "Part_Bullet.Dead_Road",
+    "property": "value",
+    "min": 6,
+    "max": 6
+}]}
+},
+		"Part_Bullet.Dead_Dam": {
+    "type": "palladium:projectile",
+    "hidden": true,
+    "entity_type": "palladium:custom_projectile",
+    "inaccuracy": 0,
+    "velocity": 1.5,
+    "swinging_arm": "none",
+    "damage_from_player": false,
+		      "entity_data": {
+		"Size": 1,
+		"Damage": 4.0,
+        "Gravity": 0,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+		"Lifetime": 15
+		},
+		"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Dead_Road"
+	},
+	{
+    "type": "palladium:ability_integer_property",
+    "ability": "Part_Bullet.Dead_Road",
+    "property": "value",
+    "min": 6,
+    "max": 6
+}]}
+},
+		"Part_Bullet.Bone_Blades": {
+    "type": "palladium:command",
+	"first_tick_commands": [
+	"execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand=4..}] rotated ~ 0 run particle weave:blood_undead ^-0.5 ^0.9 ^0.2 0.2 0.2 0.2 0 15",
+	"execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand=4..}] rotated ~ 0 run particle weave:blood_undead ^0.5 ^0.9 ^0.2 0.2 0.2 0.2 0 15"],
+	"commands": [
+	"tag @s add power_plus.Donor.Cancel.Hands",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Right.Hand=4..}] power_plus.Donor.Regenerative_Segmentation.Right.Hand 3",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 3",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Left.Hand=4..}] power_plus.Donor.Regenerative_Segmentation.Left.Hand 3",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 3"],
+	"title": "Bone blades",
+	"list_index": 2,
+    "hidden": true,
+    "hidden_in_bar": true,
+	"conditions": {"enabling": [{
+    "type": "palladium:toggle",
+    "cooldown": 0,
+    "key_type": "key_bind"
+	}],
+	"unlocking": [
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]
+	},
+	{
+    "type": "palladium:or",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Bone_Blades"
+	},
+	{
+    "type": "palladium:and",
+    "conditions": [{
+    "type": "palladium:crouching"
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Arm",
+    "min_score": 5,
+    "max_score": 100
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Arm",
+    "min_score": 5,
+    "max_score": 100
+	}]
+	}]
+	}]}
+},
+			"Bone_Blades_Str": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "palladium:punch_damage",
+    "amount": 4,
+    "operation": 0,
+    "uuid": "62682f3a-8ddf-11ee-b9d1-0242ac120002",
+	     "conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Part_Bullet.Bone_Blades"
+	}]}
+},
+
+			"Blood_Blades_Abil": {
+     "type": "palladium:animation_timer",
+	"icon": "metaverse:textures/gui/life/blood_blade.png",
+    "title": "Manifest Blades",
+    "bar_color": "red",
+    "hidden": false,
+	"hidden_in_bar": false,
+    "list_index": 2,
+    "start_value": 0,
+    "max_value": 20,
+	"conditions": {"enabling": [{
+    "type": "palladium:toggle",
+    "cooldown": 0,
+    "key_type": "key_bind"
+	}],
+	"unlocking": [
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	},
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]
+	},
+	{
+    "type": "palladium:or",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Blood_Blades_Abil"
+	},
+	{
+    "type": "palladium:and",
+    "conditions": [{
+    "type": "palladium:crouching"
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Arm",
+    "min_score": 5,
+    "max_score": 100
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Arm",
+    "min_score": 5,
+    "max_score": 100
+	}]
+	}]
+	}]}
+},
+	  	    "Blood_Blades_Anim": {
+    "type": "palladium:animation_timer",
+    "hidden": true,
+    "start_value": 0,
+    "max_value": 12,
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Blood_Blades_Abil"
+	},
+	{
+    "type": "palladium:animation_timer_ability",
+    "ability": "Blood_Blades_Abil",
+    "min": 1,
+    "max": 13
+}]}
+},
+			"Blood_Blades_Anim_Model": {
+    "type": "palladium:animation_timer",
+    "hidden": true,
+    "start_value": 0,
+    "max_value": 8,
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Blood_Blades_Abil"
+	},
+	{
+    "type": "palladium:animation_timer_ability",
+    "ability": "Blood_Blades_Abil",
+    "min": 8,
+    "max": 20
+}]}
+},
+			"Blood_Blade_Com": {
+    "type": "palladium:command",
+    "hidden": true,
+    "first_tick_commands": ["execute rotated ~ 0 positioned ^ ^ ^0.3 run particle weave:blood_undead ~ ~1.2 ~ 0.3 0.05 0.3 0 15"],
+    "commands": [],
+	     "conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Blood_Blades_Abil"
+	},
+	{
+    "type": "palladium:ability_integer_property",
+    "ability": "Blood_Blades_Abil",
+    "property": "value",
+    "min": 12,
+    "max": 200
+}]}
+},
+			"Blood_Blades_Dam": {
+    "type": "palladium:attribute_modifier",
+    "attribute": "minecraft:generic.attack_damage",
+    "amount": 8,
+    "operation": 0,
+    "uuid": "a4ce7ace-1233-11ee-be56-0242ac120002",
+			"conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Blood_Blades_Abil"
+	},
+	{
+    "type": "palladium:ability_integer_property",
+    "ability": "Blood_Blades_Abil",
+    "property": "value",
+    "min": 12,
+    "max": 200
+}]}
+},
+
+
+		"Limitter_Removal": {
+    "type": "palladium:dummy",
+	"title": "Limitter Removal",
+	"list_index": 2,
+    "hidden": true,
+    "hidden_in_bar": false,
+	"conditions": {"unlocking": [{
+    "type": "palladium:or",
+    "conditions": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Hand",
+    "min_score": 7,
+    "max_score": 100
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Hand",
+    "min_score": 7,
+    "max_score": 100
+	}]
+	},
+	
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	}]}
+},
+		"Limitter_Removal_Right": {
+    "type": "palladium:command",
+	"first_tick_commands": ["execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand=4..}] rotated ~ 0 run particle weave:blood_undead ^-0.5 ^0.9 ^0.2 0.2 0.2 0.2 0 15"],
+	"commands": [
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Right.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Right.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Fist.Attack 0"],
+    "hidden": true,
+	"hidden_in_bar": true,
+	     "conditions": {"unlocking": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Right.Hand",
+    "min_score": 7,
+    "max_score": 100
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Fist.Attack",
+    "min_score": 1,
+    "max_score": 10000000
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Limitter_Removal"
+	}]}
+},
+		"Limitter_Removal_Left": {
+    "type": "palladium:command",
+	"first_tick_commands": ["execute as @s[scores={power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand=4..}] rotated ~ 0 run particle weave:blood_undead ^0.5 ^0.9 ^0.2 0.2 0.2 0.2 0 15"],
+	"commands": [
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Left.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Regenerative_Segmentation.Stage.Left.Hand 0",
+		"scoreboard players set @s power_plus.Donor.Fist.Attack 0"],
+    "hidden": true,
+	"hidden_in_bar": true,
+	     "conditions": {"unlocking": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regenerative_Segmentation.Left.Hand",
+    "min_score": 7,
+    "max_score": 100
+	},
+	{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Fist.Attack",
+    "min_score": 1,
+    "max_score": 10000000
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Limitter_Removal"
+	}]}
+},
+		"Limitter_Removal_Str": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"attribute": "palladium:punch_damage",
+    "amount": 8,
+    "operation": 0,
+    "uuid": "62682f3a-8ddf-11ee-b4d1-0242ac120002",
+	     "conditions": {"unlocking": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Limitter_Removal"
+	}]}
+},
+
+
+
+	"No_Fall": {
+    "type": "palladium:damage_immunity",
+    "hidden": true,
+	"hidden_in_bar": true,
+	"damage_sources": [
+	"power_plus:fall"]
+},
+	"Toggle_Regen": {
+		"type": "palladium:command",
+		"title": "Toggle Regen",
+		"icon": "donor:textures/gui/life/block.png",
+		"commands": [
+		"scoreboard players add @s power_plus.Donor.Regenerative_Segmentation.Halt 1",
+		"scoreboard players set @s[scores={power_plus.Donor.Regenerative_Segmentation.Halt=2..}] power_plus.Donor.Regenerative_Segmentation.Halt 0"],
+		"hidden": true,
+		"list_index": 4,
+    "conditions": {"enabling": [{
+    "type": "palladium:action",
+    "cooldown": 0,
+    "ticks": 0,
+    "key_type": "key_bind"
+	}],
+	"unlocking": [{
+    "type": "palladium:crouching"
+	},
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	}]
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	}]}
+        },
+	"Regen_Menu": {
+		"type": "palladium:command",
+		"title": "Regen Menu",
+		"icon": "donor:textures/gui/life/part_finger.png",
+		"commands": [""],
+		"hidden": true,
+		"list_index": 4,
+    "conditions": {"enabling": [{
+    "type": "palladium:toggle",
+    "cooldown": 0,
+    "ticks": 0,
+    "key_type": "key_bind"
+	}],
+	"unlocking": [{
+    "type": "palladium:or",
+    "conditions": [{
+    "type": "palladium:ability_enabled",
+    "ability": "Regen_Menu"
+	},
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:crouching"
+	}]
+	}]
+	},
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "Ability_Bar_Visible"
+	}]}
+        }
+  }

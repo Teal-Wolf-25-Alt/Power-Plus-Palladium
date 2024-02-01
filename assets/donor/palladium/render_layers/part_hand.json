@@ -1,0 +1,11 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+
+{
+	"model_type": "palladium:basic",
+  "model_layer": "donor:part_hand#life",
+  "texture": "donor:textures/models/undead/body_layer.png"
+}
+
+]}

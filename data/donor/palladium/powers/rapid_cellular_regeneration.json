@@ -1,0 +1,332 @@
+{
+  "name": "Rapid Cellular Regeneration",
+  "background": "minecraft:textures/block/tinted_glass.png",
+  "icon": "donor:textures/gui/life/dna_icon.png",
+  "ability_bar_texture": "donor:textures/gui/life/ability_bars/powers.png",
+  "persistent_data": true,
+  "abilities": {
+	  	      "regenloop": {
+    "type": "palladium:command",
+    "hidden": true,
+    "first_tick_commands": [
+	"scoreboard objectives add power_plus.Donor.Regen.Live.Regen dummy",
+	"scoreboard objectives add power_plus.Donor.Regen.Death.Amount dummy",
+	"scoreboard objectives add power_plus.Donor.Regen.Death.Amount.Max dummy",
+	"scoreboard players set @s power_plus.Donor.Regen.Death.Amount.Max 1"],
+    "last_tick_commands": [],
+    "commands": []
+},
+	"rapid_cellular_regeneration_dummy": {
+        "type": "palladium:dummy",
+        "title": "Rapid Cellular Regeneration",
+	  "icon": "donor:textures/gui/life/regen_icon.png",
+        "gui_position": [0,-1],
+        "description": {
+            "text": "You've gained the ability to rapidly heal from physical injuries. Though this ability has great potential, your body will need to acclimate to it in order to fully utilize it."
+            },
+        "list_index": -1
+		},
+		"regeneration_stage_1": {
+		"type": "palladium:healing",
+		"frequency": 100,
+		"amount": 1.0,
+		"title": "Stage 1",
+		"gui_position": [0,-2],
+		"icon": "donor:textures/gui/life/regen_stage_1.png",
+		"description": {
+			"text": "Your body has only just acquainted itself with this ability, so the rate at which you heal is only barely faster than the average person."
+		},
+		"list_index": -1,
+	"conditions": {
+		"unlocking": [{
+			"type": "palladium:ability_unlocked",
+			"ability": "rapid_cellular_regeneration_dummy"
+		}],
+		"enabling": 
+		[{
+			"type": "palladium:not",
+			"conditions": [{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_2"
+	}]
+	}]
+		}
+		},
+		"regeneration_stage_2": {
+		"type": "palladium:healing",
+		"frequency": 70,
+		"amount": 1.1,
+		"title": "Stage 2",
+		"gui_position": [0,-3],
+		"icon": "donor:textures/gui/life/regen_stage_2.png",
+		"description": {
+			"text": "While still invisible to the naked eye, your healing rate is now marginally better than the average person."
+		},
+		"list_index": -1,
+	"conditions": {
+		"enabling": 
+		[
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_unlocked",
+    "ability": "regeneration_stage_3"
+	}]
+	}],
+		"unlocking": [
+		{
+    "type": "palladium:experience_level_buyable",
+    "xp_level": 15
+		},
+		{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_1"
+		}
+		]
+	}
+	},
+		"regeneration_stage_3": {
+		"type": "palladium:healing",
+		"frequency": 50,
+		"amount": 1.15,
+		"title": "Stage 3",
+		"gui_position": [0,-4],
+		"icon": "donor:textures/gui/life/regen_stage_3.png",
+		"description": {
+			"text": "The speed at which you heal can be classified as superhuman. What takes others weeks to recover from may take only hours for you."
+		},
+		"list_index": -1,
+	"conditions": {
+		"enabling": 
+		[
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_unlocked",
+    "ability": "regeneration_stage_4"
+	}]
+	}],
+		"unlocking": [
+		{
+    "type": "palladium:experience_level_buyable",
+    "xp_level": 20
+		},
+		{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_2"
+		}
+		]
+	}
+	},
+		"regeneration_stage_4": {
+		"type": "palladium:healing",
+		"frequency": 30,
+		"amount": 1.3,
+		"title": "Stage 4",
+		"gui_position": [0,-5],
+		"icon": "donor:textures/gui/life/regen_stage_4.png",
+		"description": {
+			"text": "You've begun to heal at a speed visible to the naked eye."
+		},
+		"list_index": -1,
+	"conditions": {
+		"enabling": 
+		[
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_unlocked",
+    "ability": "regeneration_stage_5"
+	}]
+	}],
+		"unlocking": [
+		{
+    "type": "palladium:experience_level_buyable",
+    "xp_level": 24
+		},
+		{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_3"
+		}
+		]
+	}
+	},
+		"regeneration_stage_5": {
+		"type": "palladium:healing",
+		"frequency": 15,
+		"amount": 1.5,
+		"title": "Stage 5",
+		"gui_position": [0,-6],
+		"icon": "donor:textures/gui/life/regen_stage_5.png",
+		"description": {
+			"text": "No matter the damage, your body only needs a moment to repair itself."
+		},
+		"list_index": -1,
+	"conditions": {
+		"enabling": 
+		[
+	{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_unlocked",
+    "ability": "regeneration_stage_6"
+	}]
+	}],
+		"unlocking": [
+		{
+    "type": "palladium:experience_level_buyable",
+    "xp_level": 28
+		},
+		{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_4"
+		}
+		]
+	}
+	},
+		"regeneration_stage_6": {
+		"type": "palladium:healing",
+		"frequency": 8,
+		"amount": 1.5,
+		"title": "Stage 6",
+		"gui_position": [0,-7],
+		"icon": "donor:textures/gui/life/regen_stage_6.png",
+		"description": {
+			"text": "You've nearly aclimated to this ability. Your flesh pulls itself back together like a tapestry, molding itself into familiar forms as you mend anew."
+		},
+		"list_index": -1,
+	"conditions": {"enabling": 
+		[{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:ability_unlocked",
+    "ability": "regeneration_stage_7"
+	}]
+	}],
+		"unlocking": [{
+    "type": "palladium:experience_level_buyable",
+    "xp_level": 35
+		},
+		{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_5"
+		}]}
+	},
+		"regeneration_revive_amount_1": {
+    "type": "palladium:command",
+    "hidden": true,
+    "commands": ["scoreboard players set @s power_plus.Donor.Regen.Death.Amount.Max 2"],
+	"conditions": {"enabling": [{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_6"
+		},
+		{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regen.Death.Amount.Max",
+    "min_score": -2147483648,
+    "max_score": 1
+}]}
+},
+			"Hunger_Refill": {
+    "type": "palladium:command",
+    "hidden": true,
+    "commands": [
+	"execute if score @s power_plus.Donor.Hunger matches ..11 run effect give @s minecraft:saturation 1 0"
+
+    ],
+	"conditions": {"enabling": [{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_6"
+		},
+		{
+    "type": "palladium:interval",
+    "active_ticks": 0,
+    "disabled_ticks": 60
+}]}
+},
+		"regeneration_stage_7": {
+		"type": "palladium:healing",
+		"frequency": 4,
+		"amount": 2.0,
+		"title": "Stage 7",
+		"gui_position": [0,-8],
+		"icon": "donor:textures/gui/life/regen_stage_7.png",
+		"description": {
+			"text": "Your body has learned to fully utilize this ability. In addition to healing from wounds near instantaneously, you've ceased to age, and could potentially live forever."
+		},
+		"list_index": -1,
+	"conditions": {"unlocking": [{
+    "type": "palladium:experience_level_buyable",
+    "xp_level": 40
+		},
+		{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_6"
+		}]
+	}
+	},
+		"regeneration_revive_amount_2": {
+    "type": "palladium:command",
+    "hidden": true,
+    "commands": ["scoreboard players set @s power_plus.Donor.Regen.Death.Amount.Max 3"],
+	"conditions": {"enabling": [{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_7"
+		},
+		{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regen.Death.Amount.Max",
+    "min_score": -2147483648,
+    "max_score": 2
+}]}
+},
+
+	"Regenerative_Segmentation_Unlock": {
+    "type": "palladium:command",
+    "hidden": true,
+    "commands": ["superpower add donor:regenerative_segmentation @s"],
+	"conditions": {"enabling": [{
+			"type": "palladium:ability_unlocked",
+			"ability": "regeneration_stage_7"
+		},
+		{
+    "type": "palladium:not",
+    "conditions": [{
+    "type": "palladium:has_power",
+    "power": "donor:regenerative_segmentation"
+		}]
+	}]}
+},
+
+
+
+	"Life.Regen.Timer": {
+    "type": "palladium:repeating_animation_timer",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "start_value": 0,
+    "max_value": 20,
+	"conditions": {"enabling": [{
+    "type": "palladium:objective_score",
+    "objective": "power_plus.Donor.Regen.Death.Amount",
+    "min_score": 1,
+    "max_score": 2147483647
+}]}
+},
+	"Life.Regen.End": {
+    "type": "palladium:command",
+    "hidden": true,
+    "commands": [
+	"scoreboard players add @s power_plus.Donor.Regen.Live.Regen 1",
+	"scoreboard players remove @s[scores={power_plus.Donor.Regen.Death.Amount=1..,power_plus.Donor.Regen.Live.Regen=1200..}] power_plus.Donor.Regen.Death.Amount 1",
+	"scoreboard players set @s[scores={power_plus.Donor.Regen.Live.Regen=1200..}] power_plus.Donor.Regen.Live.Regen 0"],
+	"conditions": {"unlocking": [{
+    "type": "palladium:ability_integer_property",
+    "ability": "Life.Regen.Timer",
+    "property": "value",
+    "min": 20,
+    "max":5000
+	}]}
+}
+  }
+}
