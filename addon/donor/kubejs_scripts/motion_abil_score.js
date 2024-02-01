@@ -2,7 +2,7 @@
     let ClientboundSetEntityMotionPacket = Java.loadClass('net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket');
 
     StartupEvents.registry('palladium:abilities', (event) => {
-        event.create('heroes:motion_abil_score')
+        event.create('donor:motion_abil_score')
             .icon(palladium.createItemIcon('palladium:vibranium_circuit'))
             .addProperty("score_value", "string", "Jump.Score", "Scoreboard Name")
             .addProperty("division_amount", "string", "1", "Amount score will be divided")

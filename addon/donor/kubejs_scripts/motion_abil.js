@@ -1,7 +1,7 @@
 let ClientboundSetEntityMotionPacket = Java.loadClass('net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket');
 
 StartupEvents.registry('palladium:abilities', (event) => {
-  event.create('heroes:motion_abil')
+  event.create('donor:motion_abil')
     .icon(palladium.createItemIcon('palladium:vibranium_circuit'))
     .addProperty("motion_scale", "float", 1.1, "Motion Scale")
     .tick((entity, entry, holder, enabled) => {
