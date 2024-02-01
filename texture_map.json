@@ -1,0 +1,18 @@
+{
+    "donor": {
+        "regenerative_segmentation": {
+            "Part_Bullet.Dead_Road": {
+                "0_type": "icon",
+                "textures": ["donor:textures/gui/life/part_finger.png"]
+            },
+            "Blood_Blades_Abil": {
+                "0_type": "icon",
+                "textures": ["donor:textures/gui/life/blood_blade.png"]
+            },
+            "Regen_Menu": {
+                "0_type": "icon",
+                "textures":["donor:textures/gui/life/part_finger.png"]
+            }
+        }
+    }
+}

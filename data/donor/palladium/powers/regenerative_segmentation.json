@@ -1,7 +1,7 @@
 {
   "name": "Regenerative Segmentation",
   "background": "minecraft:textures/block/tinted_glass.png",
-  "icon": "donor:textures/gui/life/dna_icon.png",
+  "icon": "donor:textures/gui/life/logo.png",
   "ability_bar_texture": "donor:textures/gui/life/ability_bars/powers.png",
   "persistent_data": true,
   "primary_color": "#bdd4fd",
@@ -1350,7 +1350,7 @@
 		"type": "palladium:animation_timer",
 		"title": "Part Bullet : blood_undead Stream",
 		"list_index": 2,
-		"icon": "donor:textures/gui/life/part_finger.png",
+		"icon": "power_plus:textures/gui/missing.png",
 		"hidden": true,
 		"hidden_in_bar": false,
 		"start_value": 0,
@@ -1536,7 +1536,7 @@
 
 			"Blood_Blades_Abil": {
      "type": "palladium:animation_timer",
-	"icon": "metaverse:textures/gui/life/blood_blade.png",
+	"icon": "power_plus:textures/gui/missing.png",
     "title": "Manifest Blades",
     "bar_color": "red",
     "hidden": false,
@@ -1791,7 +1791,7 @@
 	"Regen_Menu": {
 		"type": "palladium:command",
 		"title": "Regen Menu",
-		"icon": "donor:textures/gui/life/part_finger.png",
+		"icon": "power_plus:textures/gui/missing.png",
 		"commands": [""],
 		"hidden": true,
 		"list_index": 4,
