@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.CryoKinetic_Armoury.Tool"
+}
+  },
+  "base": "heroes:textures/gui/cryo_tool_#X.png"
+}

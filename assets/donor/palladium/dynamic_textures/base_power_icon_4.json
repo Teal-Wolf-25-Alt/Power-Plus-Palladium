@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Concentration"
+}
+  },
+  "base": "heroes:textures/gui/hud/concentration_energy_#X.png"
+}

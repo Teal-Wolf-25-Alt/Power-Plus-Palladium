@@ -1,0 +1,15 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:animation_timer_ability",
+    "power": "heroes:ocular_psychogenesis",
+    "ability": "Psychogenesis_Toggle_Anim"
+},
+"Y": {
+    "type": "palladium:animation_timer_ability",
+    "power": "heroes:ocular_psychogenesis",
+    "ability": "Psychogenesis_Toggle_Anim_Awaken"
+}
+  },
+  "base": "heroes:textures/gui/eye_open_#X_#Y.png"
+}
