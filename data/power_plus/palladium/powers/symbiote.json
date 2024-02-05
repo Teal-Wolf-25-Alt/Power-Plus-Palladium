@@ -87,6 +87,8 @@
     },
     "shot": {
       "type": "palladium:projectile",
+      "icon": "power_plus:textures/gui/symbiote/shot.png",
+      "title": "Symbiote Shot",
       "entity_type": "palladium:custom_projectile",
       "swinging_arm": "main_arm",
       "list_index": 1,
@@ -95,7 +97,7 @@
       "entity_data": {
         "Gravity": 0.01,
         "Size": 0.75,
-        "Lifetime": 20,
+        "Lifetime": 100,
         "DieOnEntityHit": true,
         "DieOnBlockHit": true,
         "Appearances": [{
