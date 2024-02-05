@@ -2,11 +2,11 @@
   "name": "Symbiote",
   "background": "minecraft:textures/block/black_wool.png",
   "icon": "power_plus:textures/gui/symbiote/logo.png",
-  "energy_bar": {
+  "energy_bars": {
     "symbiote": {
       "max": 200,
       "auto_increase_per_tick": 1,
-      "color": "000000"
+      "color": "#090909"
     }
   },
   "abilities": {
@@ -121,7 +121,9 @@
           {
             "type": "palladium:ability_enabled",
             "ability": "toggle"
-          },
+          }
+        ],
+        "enabling": [
           {
             "type": "palladium:action",
             "needs_empty_hand": true
