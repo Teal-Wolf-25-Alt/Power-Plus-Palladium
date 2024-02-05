@@ -1,0 +1,16 @@
+{
+  "name": "Golden Heart",
+  "background": "minecraft:textures/block/yellow_wool.png",
+  "icon": "donor:textures/item/life/gold_heart.png",
+  "abilities": {
+    "health": {
+      "type": "palladium:attribute_modifier",
+      "icon": "donor:textures/gui/life/logo.png",
+      "title": "Healthy",
+      "operation": 1,
+      "amount": 1,
+      "attribute": "minecraft:generic.max_health",
+      "uuid": "fea737c0-8683-492c-b34b-3bc9a5bd7cbf"
+    }
+  }
+}
