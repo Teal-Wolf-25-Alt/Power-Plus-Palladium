@@ -1,7 +1,7 @@
 {
   "name": "Rapid Cellular Regeneration",
   "background": "minecraft:textures/block/tinted_glass.png",
-  "icon": "donor:textures/gui/life/dna_icon.png",
+  "icon": "donor:textures/gui/life/logo.png",
   "ability_bar_texture": "donor:textures/gui/life/ability_bars/powers.png",
   "persistent_data": true,
   "abilities": {

@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Kitsune_Mimicry.Fox_Fire.Amount"
+}
+  },
+  "base": "heroes:textures/gui/fox_flame_hud_#X.png"
+}

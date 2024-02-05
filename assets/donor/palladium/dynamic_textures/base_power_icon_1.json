@@ -1,0 +1,11 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:ability_integer_property",
+    "power": "heroes:base_power",
+    "ability": "genetic_marker",
+    "property": "value"
+}
+  },
+  "base": "heroes:textures/gui/hud/base_#X.png"
+}

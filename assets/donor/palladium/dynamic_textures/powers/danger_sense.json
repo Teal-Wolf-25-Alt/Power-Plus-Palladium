@@ -1,0 +1,10 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:animation_timer_ability",
+    "power": "heroes:danger_sense",
+    "ability": "Reflex_Dodge_Anim"
+}
+  },
+  "base": "heroes:textures/gui/hud/danger_sense_#X.png"
+}

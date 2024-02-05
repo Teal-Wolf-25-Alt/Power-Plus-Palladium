@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Pyrokinesis.Flames"
+}
+  },
+  "base": "heroes:textures/gui/pyro_spin_#X.png"
+}

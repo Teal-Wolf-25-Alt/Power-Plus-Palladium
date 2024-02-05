@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Cycle.Pocket_Dimension"
+}
+  },
+  "base": "heroes:textures/gui/dim_remove_#X.png"
+}

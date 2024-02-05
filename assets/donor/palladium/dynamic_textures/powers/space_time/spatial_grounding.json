@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Space_Time_Manipulation.RandomTp.Toggle"
+}
+  },
+  "base": "heroes:textures/gui/spatial_grounding_#X.png"
+}

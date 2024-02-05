@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Concentration.Max"
+}
+  },
+  "base": "heroes:textures/gui/hud/concentration_#X.png"
+}

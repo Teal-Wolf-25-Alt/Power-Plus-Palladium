@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Dye.Cycle"
+}
+  },
+  "base": "heroes:textures/gui/dye_create_#X.png"
+}

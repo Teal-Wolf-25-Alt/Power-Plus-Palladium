@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:objective_score",
+    "objective": "Heroes.Stamina.Percent"
+}
+  },
+  "base": "heroes:textures/gui/hud/stamina_#X.png"
+}

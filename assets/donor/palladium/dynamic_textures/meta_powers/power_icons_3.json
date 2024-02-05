@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+      "type": "palladium:objective_score",
+      "objective": "Heroes.Power.Icon.Empathic"
+    }
+  },
+  "base": "heroes:textures/gui/power_icons/power_#X.png"
+}
