@@ -2,11 +2,19 @@
   "name": "Symbiote",
   "background": "minecraft:textures/block/black_wool.png",
   "icon": "power_plus:textures/gui/symbiote/logo.png",
+  "energy_bar": {
+    "symbiote": {
+      "max": 200,
+      "auto_increase_per_tick": 1,
+      "color": "000000"
+    }
+  },
   "abilities": {
     "toggle": {
       "type": "palladium:dummy",
       "icon": "power_plus:textures/gui/symbiote/logo.png",
       "title": "Enable Symbiote",
+      "list_index": 0,
       "conditions": {
         "enabling": [
           {
@@ -21,6 +29,37 @@
       "hidden_in_bar": true,
       "scale": 2,
       "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle"
+          }
+        ]
+      }
+    },
+    "skin": {
+      "type": "palladium:skin_change",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "texture": "power_plus:textures/entity/player/symbiote/skin.png",
+      "priority": 100,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle"
+          }
+        ]
+      }
+    },
+    "heal": {
+      "type": "palladium:healing",
+      "icon": "power_plus:textures/gui/symbiote/heal.png",
+      "title": "Self-Repair",
+      "hidden_in_bar": true,
+      "frequency": 20,
+      "amount": 2,
+      "conditions": {
         "enabling": [
           {
             "type": "palladium:ability_enabled",
@@ -28,21 +67,65 @@
           }
         ]
       }
-  },
-  "skin": {
-    "type": "palladium:skin_change",
-    "hidden": true,
-    "hidden_in_bar": true,
-    "texture": "power_plus:textures/entity/player/symbiote/skin.png",
-    "priority": 100,
-    "conditions": {
-      "enabling": [
-        {
-          "type": "palladium:ability_enabled",
-          "ability": "toggle"
-        }
-      ]
+    },
+    "atk": {
+      "type": "palladium:attribute_modifier",
+      "title": "Strength",
+      "icon": "minecraft:netherite_sword",
+      "hidden_in_bar": true,
+      "attribute": "palladium:punch_damage",
+      "amount": 7,
+      "operation": 1,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle"
+          }
+        ]
+      }
+    },
+    "shot": {
+      "type": "palladium:projectile",
+      "entity_type": "palladium:custom_projectile",
+      "swinging_arm": "main_arm",
+      "list_index": 1,
+      "velocity": 2,
+      "damage_from_player": true,
+      "entity_data": {
+        "Gravity": 0.01,
+        "Size": 0.75,
+        "Lifetime": 20,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+        "Appearances": [{
+            "Type": "particles",
+            "ParticleType": "weave:symbiote",
+            "Spread": 0,
+			      "Amount": 1
+          }]
+      },
+      "energy_bar_usage": {
+        "energy_bar": "symbiote",
+        "amount": 50
+      },
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:energy_bar",
+            "energy_bar": "symbiote",
+            "min": 50
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle"
+          },
+          {
+            "type": "palladium:action",
+            "needs_empty_hand": true
+          }
+        ]
+      }
     }
-}
   }
 }
