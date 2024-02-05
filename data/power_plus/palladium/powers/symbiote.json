@@ -1,0 +1,48 @@
+{
+  "name": "Symbiote",
+  "background": "minecraft:textures/block/black_wool.png",
+  "icon": "power_plus:textures/gui/symbiote/logo.png",
+  "abilities": {
+    "toggle": {
+      "type": "palladium:dummy",
+      "icon": "power_plus:textures/gui/symbiote/logo.png",
+      "title": "Enable Symbiote",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle"
+          }
+        ]
+      }
+    },
+    "size": {
+      "type": "palladium:size",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "scale": 2,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle"
+          }
+        ]
+      }
+  },
+  "skin": {
+    "type": "palladium:skin_change",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "texture": "power_plus:textures/entity/player/symbiote/skin.png",
+    "priority": 100,
+    "conditions": {
+      "enabling": [
+        {
+          "type": "palladium:ability_enabled",
+          "ability": "toggle"
+        }
+      ]
+    }
+}
+  }
+}
