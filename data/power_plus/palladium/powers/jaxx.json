@@ -3,37 +3,6 @@
   "background": "minecraft:textures/block/light_blue_wool.png",
   "icon": "power_plus:textures/gui/teal/icon.png",
   "abilities": {
-    "fly": {
-      "type": "palladium:attribute_modifier",
-      "icon": "power_plus:textures/gui/teal/fly.png",
-      "title": "Flight",
-      "amount": 1,
-      "attribute": "palladium:flight_speed",
-      "gui_position": [1,3],
-      "conditions": {
-        "unlocking": [
-          {
-            "type": "palladium:experience_level_buyable",
-            "xp_level": 18
-          },
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "magic"
-          }
-        ],
-        "enabling": [
-          {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:ability_unlocked",
-                "ability": "fly2"
-              }
-            ]
-          }
-        ]
-      }
-    },
     "fly2": {
       "type": "palladium:attribute_modifier",
       "icon": "power_plus:textures/gui/teal/fly.png",
@@ -41,6 +10,7 @@
       "description": "Combine your speed and flight to learn to fly faster.",
       "amount": 2.5,
       "attribute": "palladium:flight_speed",
+      "uuid": "f3959855-4790-4328-997e-802a97be7c86",
       "gui_position": [1,7],
       "conditions": {
         "unlocking": [
@@ -50,6 +20,7 @@
           },
           {
             "type": "palladium:ability_unlocked",
+            "power": "power_plus:jaxx_staff",
             "ability": "fly"
           },
           {
@@ -71,6 +42,7 @@
       "amount": 1.5,
       "operation": 1,
       "attribute": "minecraft:generic.movement_speed",
+      "uuid": "80960b8a-49d8-480f-a5ff-0757abc94e5b",
       "gui_position": [0,0.5],
       "conditions": {
         "unlocking": [
@@ -124,32 +96,18 @@
       "title": "Invulnerable",
       "gui_position": [0,1],
       "damage_sources": [
-        "minecraft:damages_helmet",
-        "minecraft:bypasses_armor",
-        "minecraft:bypasses_shield",
-        "minecraft:bypasses_invulnerability",
-        "minecraft:bypasses_cooldown",
-        "minecraft:bypasses_effects",
-        "minecraft:bypasses_resistance",
-        "minecraft:bypasses_enchantments",
         "minecraft:is_fire",
         "minecraft:is_projectile",
-        "minecraft:witch_resistant_to",
         "minecraft:is_explosion",
         "minecraft:is_fall",
         "minecraft:is_drowning",
-        "minecraft:is_freezing",
-        "minecraft:is_lightning",
         "minecraft:no_anger",
         "minecraft:no_impact",
         "minecraft:always_most_significant_fall",
-        "minecraft:wither_immune_to",
         "minecraft:ignites_armor_stands",
         "minecraft:burns_armor_stands",
         "minecraft:avoids_guardian_thorns",
-        "minecraft:always_triggers_silverfish",
-        "minecraft:always_hurts_ender_dragons",
-        "power_plus:entity"
+        "minecraft:always_triggers_silverfish"
       ],
       "conditions": {
         "enabling": [

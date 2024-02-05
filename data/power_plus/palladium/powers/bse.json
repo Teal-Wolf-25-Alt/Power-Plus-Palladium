@@ -3,12 +3,14 @@
   "background": "minecraft:textures/block/red_wool.png",
   "icon": "power_plus:textures/gui/tachyon/bse_logo.png",
   "abilities": {
-    "astral1": {
+    "speed_up": {
       "type": "palladium:attribute_modifier",
       "icon": "power_plus:textures/gui/tachyon/bse_logo.png",
       "title": "Speed Boost",
       "operation": 1,
-      "amount": 0.5,
+      "amount": 1.5,
+      "attribute": "minecraft:generic.movement_speed",
+      "uuid": "670d6e43-f331-42cd-b3fa-2855505556cd",
       "conditions": {
         "enabling": [
           {

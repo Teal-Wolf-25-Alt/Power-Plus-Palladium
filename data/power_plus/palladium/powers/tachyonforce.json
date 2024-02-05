@@ -9,21 +9,42 @@
       "title": "Super Speed",
       "list_index": 0,
       "bar_color": "red",
-      "amount": 3.2,
+      "amount": 1.6,
       "attribute": "minecraft:generic.movement_speed",
+      "uuid": "84ef2f06-8f15-4545-94a4-6ada84599cc9",
       "conditions": {
         "enabling": [
           {
             "type": "palladium:toggle"
+          }
+        ]
+      }
+    },    
+    "speedy": {
+      "type": "palladium:attribute_modifier",
+      "icon": "power_plus:textures/gui/tachyon/logo.png",
+      "title": "Super Speed",
+      "list_index": 1,
+      "bar_color": "red",
+      "amount": 2,
+      "operation": 1,
+      "attribute": "minecraft:generic.movement_speed",
+      "uuid": "84ef2f06-8f15-4545-94a4-6ada84599cd0",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:experience_level_buyable",
+            "xp_level": 30
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 60
           },
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:ability_enabled",
-                "ability": "speedy"
-              }
-            ]
+            "type": "palladium:ability_enabled",
+            "ability": "speed"
           }
         ]
       }
@@ -32,7 +53,8 @@
       "type": "palladium:attribute_modifier",
       "title": "Kinectic Strength",
       "attribute":"palladium:punch_damage",
-      "amount": 8.5,
+      "uuid": "e588a3bd-9dbe-4c03-a54f-3cdcd37026c4",
+      "amount": 6.5,
       "hidden_in_bar": true,
       "icon": "power_plus:textures/gui/tachyon/logo.png",
       "conditions": {
@@ -47,7 +69,7 @@
     "phase": {
       "type": "palladium:intangibility",
       "title": "Phasing",
-      "list_index": 1,
+      "list_index": 2,
       "bar_color": "red",
       "icon": "power_plus:textures/gui/tachyon/phasing.png",
       "conditions": {
@@ -68,7 +90,7 @@
       "type": "palladium:healing",
       "icon": "power_plus:textures/gui/tachyon/heart.png",
       "frequency": 8,
-      "amount": 2,
+      "amount": 1,
       "title": "Speed Healing",
       "conditions": {
         "enabling": [
@@ -82,7 +104,7 @@
       "type": "palladium:water_walk",
       "icon": "power_plus:textures/gui/tachyon/waterr.png",
       "title": "Water Running",
-      "list_index": 2,
+      "list_index": 3,
       "bar_color": "red",
       "conditions": {
           "unlocking": [
