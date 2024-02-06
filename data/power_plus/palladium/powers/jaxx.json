@@ -117,7 +117,7 @@
       "gui_position": [1,0],
       "list_index": 7,
       "commands": [
-        "time add 24000"
+        "time add 1d"
       ],
       "conditions": {
         "enabling": [
@@ -135,7 +135,7 @@
       "gui_position": [-1,0],
       "list_index": 8,
       "commands": [
-        "time add 168000"
+        "time add 7d"
       ],
       "conditions": {
         "enabling": [
