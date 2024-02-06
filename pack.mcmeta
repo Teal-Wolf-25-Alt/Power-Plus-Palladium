@@ -3,7 +3,7 @@
     "id": "power_plus",
     "description": "Power Plus Plus",
     "pack_format": 15,
-    "version": "3.0"
+    "version": "3.1"
   },
   "dependencies": {
     "common": {
