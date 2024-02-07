@@ -78,7 +78,8 @@
       "bar_color": "light_blue",
       "icon": "power_plus:textures/gui/shadow/reset_time.png",
       "title": "Accelerate Time",
-      "gui_position": [0,0],
+      "gui_position": [-0.5,0],
+      "list_index": 5,
       "commands": [
         "time add 25"
       ],
@@ -86,6 +87,60 @@
         "enabling": [
           {
             "type": "palladium:held"
+          }
+        ]
+      }
+    },
+    "time2": {
+      "type": "palladium:command",
+      "bar_color": "light_blue",
+      "icon": "power_plus:textures/gui/shadow/reset_time.png",
+      "title": "Hyper Accelerate Time",
+      "gui_position": [0.5,0],
+      "list_index": 6,
+      "commands": [
+        "time add 240"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held"
+          }
+        ]
+      }
+    },
+    "moon_next": {
+      "type": "palladium:command",
+      "bar_color": "light_blue",
+      "icon": "power_plus:textures/gui/shadow/reset_time.png",
+      "title": "Next Moon Phase",
+      "gui_position": [1,0],
+      "list_index": 7,
+      "commands": [
+        "time add 1d"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action"
+          }
+        ]
+      }
+    },
+    "moon_prev": {
+      "type": "palladium:command",
+      "bar_color": "light_blue",
+      "icon": "power_plus:textures/gui/shadow/reset_time.png",
+      "title": "Previous Moon Phase",
+      "gui_position": [-1,0],
+      "list_index": 8,
+      "commands": [
+        "time add 7d"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action"
           }
         ]
       }
