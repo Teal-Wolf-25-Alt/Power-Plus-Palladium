@@ -19,6 +19,52 @@
         "enabling": [
           {
             "type": "palladium:toggle"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:is_on_fire"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "off": {
+      "type": "palladium:dummy",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "energy_bar_usage": {
+        "energy_bar": "symbiote",
+        "amount": 3
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "toggle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "off_fire": {
+      "type": "palladium:dummy",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "energy_bar_usage": {
+        "energy_bar": "symbiote",
+        "amount": 20
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:is_on_fire"
           }
         ]
       }
@@ -60,7 +106,7 @@
       "frequency": 20,
       "amount": 2,
       "conditions": {
-        "enabling": [
+        "unlocking": [
           {
             "type": "palladium:ability_enabled",
             "ability": "toggle"
@@ -75,6 +121,23 @@
       "hidden_in_bar": true,
       "attribute": "palladium:punch_damage",
       "amount": 7,
+      "operation": 1,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle"
+          }
+        ]
+      }
+    },
+    "move": {
+      "type": "palladium:attribute_modifier",
+      "title": "Strength",
+      "icon": "power_plus:textures/gui/symbiote/move.png",
+      "hidden_in_bar": true,
+      "attribute": "minecraft:generic.movement_speed",
+      "amount": 2,
       "operation": 1,
       "conditions": {
         "unlocking": [
