@@ -23,7 +23,7 @@
     "speedy": {
       "type": "palladium:attribute_modifier",
       "icon": "power_plus:textures/gui/tachyon/logo.png",
-      "title": "Super Speed",
+      "title": "Super Speedy",
       "list_index": 1,
       "bar_color": "red",
       "amount": 2,
@@ -54,7 +54,7 @@
       "title": "Kinectic Strength",
       "attribute":"palladium:punch_damage",
       "uuid": "e588a3bd-9dbe-4c03-a54f-3cdcd37026c4",
-      "amount": 6.5,
+      "amount": 8,
       "hidden_in_bar": true,
       "icon": "power_plus:textures/gui/tachyon/logo.png",
       "conditions": {
